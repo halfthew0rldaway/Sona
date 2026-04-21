@@ -1,0 +1,182 @@
+[
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_badge_bit_perfect.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_badge_bit_perfect.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_secondary_button.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_secondary_button.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_circle_surface.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_circle_surface.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_circle_surface_active.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_circle_surface_active.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_panel_card.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_panel_card.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_route_card_active.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_route_card_active.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_circle_secondary.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_circle_secondary.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/layout_fragment_browser.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_browser.xml"
+    },
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-debug-47:/layout_activity_main.xml.flat",
+        "source": "dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_chip_primary.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_chip_primary.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_ic_menu_bars.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/ic_menu_bars.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_space_grotesk.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/space_grotesk.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_primary_button.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_primary_button.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_ic_folder.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/ic_folder.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_space_grotesk_regular.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/space_grotesk_regular.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_jetbrains_mono_bold.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/jetbrains_mono_bold.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_album_art.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_album_art.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_ic_stop.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/ic_stop.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_space_grotesk_bold.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/space_grotesk_bold.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_profile_badge.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_profile_badge.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_inter_regular.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/inter_regular.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_app_canvas.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_app_canvas.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_inter_black.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/inter_black.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_ic_nav_playing.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/ic_nav_playing.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_nav_shell.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_nav_shell.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/color_bottom_nav_item_tint.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/color/bottom_nav_item_tint.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_chip_surface.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_chip_surface.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/layout_activity_main.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_ic_manage.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/ic_manage.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bottom_nav_item_background.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bottom_nav_item_background.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_top_bar.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_top_bar.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_jetbrains_mono_regular.ttf.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/jetbrains_mono_regular.ttf"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_route_card.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_route_card.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/layout_fragment_engine.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_engine.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_route_indicator.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_route_indicator.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_inter.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/inter.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_panel_card_high.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_panel_card_high.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_glass_chip.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_glass_chip.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/font_jetbrains_mono.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/font/jetbrains_mono.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_panel_slot.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_panel_slot.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/menu_bottom_nav_menu.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/layout_fragment_playing.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_playing.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_route_indicator_active.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_route_indicator_active.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_panel_card_low.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_panel_card_low.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-debug-47:/drawable_bg_chip_secondary.xml.flat",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/drawable/bg_chip_secondary.xml"
+    }
+]

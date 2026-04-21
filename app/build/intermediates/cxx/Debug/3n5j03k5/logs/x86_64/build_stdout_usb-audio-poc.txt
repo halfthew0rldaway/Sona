@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/bleu/uapp_wannabe/app/.cxx/Debug/3n5j03k5/x86_64'
+ninja: no work to do.

@@ -1,0 +1,5 @@
+# ninja log v5
+1	1043	1776762510917230613	CMakeFiles/usb-audio-poc.dir/descriptor_parser.cpp.o	12daa8aaf1e8231f
+1	1311	1776762511185770095	CMakeFiles/usb-audio-poc.dir/native_bridge.cpp.o	268fbcdd6e746d87
+1	1601	1776762511473061628	CMakeFiles/usb-audio-poc.dir/usb_audio_engine.cpp.o	ed39aaf8c66e80f3
+1601	1647	1776762511522782083	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/3n5j03k5/obj/x86/libusb-audio-poc.so	bc5368dfd96e01c1

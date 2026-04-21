@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/activity_main.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_engine.xml",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_engine.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/activity_main.xml",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_browser.xml",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_browser.xml"
+    },
+    {
+        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_playing.xml",
+        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_playing.xml"
+    }
+]

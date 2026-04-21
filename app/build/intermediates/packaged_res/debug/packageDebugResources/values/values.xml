@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="error">#FFB4AB</color>
+    <color name="error_container">#93000A</color>
+    <color name="inverse_on_surface">#313030</color>
+    <color name="inverse_surface">#E5E2E1</color>
+    <color name="on_error">#690005</color>
+    <color name="on_error_container">#FFDAD6</color>
+    <color name="on_primary">#00363D</color>
+    <color name="on_primary_container">#001F24</color>
+    <color name="on_secondary">#3C2F00</color>
+    <color name="on_secondary_container">#342800</color>
+    <color name="on_surface">#E5E2E1</color>
+    <color name="on_surface_variant">#BAC9CC</color>
+    <color name="outline">#849396</color>
+    <color name="outline_variant">#3B494C</color>
+    <color name="outline_variant_15">#263B494C</color>
+    <color name="primary">#C3F5FF</color>
+    <color name="primary_container">#00E5FF</color>
+    <color name="primary_container_12">#1F00E5FF</color>
+    <color name="primary_container_18">#2E00E5FF</color>
+    <color name="primary_container_40">#6600E5FF</color>
+    <color name="primary_fixed_dim">#00DAF3</color>
+    <color name="secondary">#E9C349</color>
+    <color name="secondary_container">#AF8D11</color>
+    <color name="secondary_fixed_dim">#E9C349</color>
+    <color name="surface">#131313</color>
+    <color name="surface_container">#201F1F</color>
+    <color name="surface_container_high">#2A2A2A</color>
+    <color name="surface_container_highest">#353534</color>
+    <color name="surface_container_low">#1C1B1B</color>
+    <color name="surface_container_lowest">#0E0E0E</color>
+    <color name="surface_dim">#131313</color>
+    <color name="surface_scrim">#CC131313</color>
+    <color name="surface_tint">#00DAF3</color>
+    <color name="surface_variant">#353534</color>
+    <string name="app_name">Sonic Gallery</string>
+    <string name="title_browser">Browser</string>
+    <string name="title_engine">Engine</string>
+    <string name="title_playing">Playing</string>
+    <style name="TextAppearance.Sonic.Display" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+    <style name="TextAppearance.Sonic.Mono" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/jetbrains_mono</item>
+        <item name="android:fontFamily">@font/jetbrains_mono</item>
+    </style>
+    <style name="TextAppearance.Sonic.Nav" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/space_grotesk</item>
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="TextAppearance.Sonic.Technical" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/space_grotesk</item>
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Theme.UsbAudioPoc" parent="Theme.Material3.Dark.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+        <item name="colorErrorContainer">@color/error_container</item>
+        <item name="colorOnErrorContainer">@color/on_error_container</item>
+
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+
+        
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+
+        
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,3 @@
+/home/bleu/uapp_wannabe/app/.cxx/Debug/3n5j03k5/x86_64/CMakeFiles/usb-audio-poc.dir
+/home/bleu/uapp_wannabe/app/.cxx/Debug/3n5j03k5/x86_64/CMakeFiles/edit_cache.dir
+/home/bleu/uapp_wannabe/app/.cxx/Debug/3n5j03k5/x86_64/CMakeFiles/rebuild_cache.dir
