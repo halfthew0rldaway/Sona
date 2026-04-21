@@ -429,8 +429,9 @@
                 android:layout_height="52dp"
                 android:alpha="0.5"
                 android:background="@drawable/bg_secondary_button"
-                android:clickable="false"
-                android:focusable="false"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 android:src="@android:drawable/ic_media_previous"
                 app:tint="@color/on_surface_variant" />
 
@@ -440,16 +441,22 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/bg_secondary_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 android:src="@drawable/ic_stop"
                 app:tint="@color/on_surface" />
 
             <ImageButton
                 android:id="@+id/btn_play_pause"
-                android:layout_width="88dp"
-                android:layout_height="120dp"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/bg_primary_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="centerInside"
                 android:src="@android:drawable/ic_media_play"
                 app:tint="@color/on_primary" />
@@ -459,8 +466,9 @@
                 android:layout_height="52dp"
                 android:alpha="0.5"
                 android:background="@drawable/bg_secondary_button"
-                android:clickable="false"
-                android:focusable="false"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 android:src="@android:drawable/ic_media_next"
                 app:tint="@color/on_surface_variant" />
         </LinearLayout>

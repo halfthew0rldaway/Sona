@@ -28,8 +28,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_menu_bars"
             app:tint="@color/primary_container" />
 
@@ -49,6 +53,9 @@
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:background="@drawable/bg_profile_badge"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:fontFamily="@font/jetbrains_mono"
             android:gravity="center"
             android:text="USB"
