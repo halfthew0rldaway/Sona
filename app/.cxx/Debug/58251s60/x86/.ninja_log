@@ -1,0 +1,14 @@
+# ninja log v5
+0	2844	1776919193916593985	CMakeFiles/usb-audio-poc.dir/native_bridge.cpp.o	68403b90182accd1
+3	3003	1776919194078836283	CMakeFiles/usb-audio-poc.dir/descriptor_parser.cpp.o	7691292776ffe973
+1	3496	1776919194576867351	CMakeFiles/usb-audio-poc.dir/usb_audio_engine.cpp.o	bc47111e48774e70
+3496	3575	1776919194669024448	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so	60492bccd1e7f7c
+4	1061	1776919425451248762	CMakeFiles/usb-audio-poc.dir/descriptor_parser.cpp.o	7691292776ffe973
+1061	1111	1776919425507850327	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so	60492bccd1e7f7c
+5	1263	1776921052143669086	CMakeFiles/usb-audio-poc.dir/usb_audio_engine.cpp.o	bc47111e48774e70
+1263	1356	1776921052243873702	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so	60492bccd1e7f7c
+4	1483	1776921723136708545	CMakeFiles/usb-audio-poc.dir/usb_audio_engine.cpp.o	bc47111e48774e70
+1483	1530	1776921723196488136	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so	60492bccd1e7f7c
+4	1325	1776925906156700863	CMakeFiles/usb-audio-poc.dir/native_bridge.cpp.o	68403b90182accd1
+5	1544	1776925906372291253	CMakeFiles/usb-audio-poc.dir/usb_audio_engine.cpp.o	bc47111e48774e70
+1544	1608	1776925906444555356	/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so	60492bccd1e7f7c

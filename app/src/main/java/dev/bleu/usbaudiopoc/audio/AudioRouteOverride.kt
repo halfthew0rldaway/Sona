@@ -1,13 +1,12 @@
 package dev.bleu.usbaudiopoc.audio
 
 enum class AudioRouteOverride(val displayName: String) {
-    AUTO("Auto (USB if available)"),
-    USB_ONLY("USB DAC only"),
-    ANDROID_ONLY("Android AudioTrack");
+    BIT_PERFECT("Bit-Perfect Mode"),
+    DSP("DSP Mode");
 
     companion object {
         fun fromPosition(position: Int): AudioRouteOverride {
-            return entries.getOrElse(position) { AUTO }
+            return entries.getOrElse(position) { BIT_PERFECT }
         }
     }
 }

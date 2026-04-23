@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bit-Perfect Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0dcd9",
+                        "on-tertiary-fixed-variant": "#3f307a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#913b0c",
+                        "surface": "#fdfcfb",
+                        "on-tertiary-container": "#331499",
+                        "inverse-primary": "#ffa775",
+                        "tertiary-fixed": "#d6cbff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f7f5f2",
+                        "on-primary-fixed": "#4a1c02",
+                        "surface-container": "#f2eee9",
+                        "secondary-container": "#7cf0c8",
+                        "surface-container-high": "#ebe6df",
+                        "surface-tint": "#d9662b",
+                        "on-background": "#1f1a17",
+                        "tertiary-container": "#b8a8ff",
+                        "primary-fixed": "#ffcca6",
+                        "surface-bright": "#fdfcfb",
+                        "on-secondary-fixed-variant": "#008563",
+                        "secondary-fixed-dim": "#4adeb3",
+                        "outline-variant": "#d6c9c1",
+                        "secondary": "#00b386",
+                        "on-tertiary-fixed": "#1d0259",
+                        "on-primary-container": "#8a3d15",
+                        "on-secondary-container": "#005941",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#7cf0c8",
+                        "on-surface-variant": "#54473f",
+                        "outline": "#8a7a70",
+                        "inverse-on-surface": "#f5f0ec",
+                        "background": "#fdfcfb",
+                        "primary-container": "#ffb38a",
+                        "on-surface": "#1f1a17",
+                        "inverse-surface": "#332c28",
+                        "primary": "#d9662b",
+                        "surface-dim": "#ded9d3",
+                        "on-secondary-fixed": "#003b2a",
+                        "tertiary": "#7b5cf0",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3dcd5",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffa775",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#b8a8ff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "md": "24px",
+                        "margin": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "button": ["16px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .clay-card {
+            background: #fdfcfb;
+            box-shadow: 
+                10px 10px 30px rgba(0, 0, 0, 0.08),
+                -10px -10px 30px rgba(255, 255, 255, 0.9),
+                inset 3px 3px 6px rgba(255, 255, 255, 0.95),
+                inset -3px -3px 6px rgba(0, 0, 0, 0.04);
+        }
+        .clay-btn {
+            background: #fdfcfb;
+            box-shadow: 
+                8px 8px 20px rgba(0, 0, 0, 0.08),
+                -8px -8px 20px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .clay-btn:active {
+            box-shadow: 
+                2px 2px 5px rgba(0, 0, 0, 0.08),
+                -2px -2px 5px rgba(255, 255, 255, 0.9),
+                inset 5px 5px 10px rgba(0, 0, 0, 0.06),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+            transform: scale(0.96);
+        }
+        .clay-inset {
+            background: #fdfcfb;
+            box-shadow: 
+                inset 5px 5px 10px rgba(0, 0, 0, 0.08),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+        }
+        .clay-mint {
+            background: #7cf0c8;
+            box-shadow: 
+                6px 6px 16px rgba(0, 179, 134, 0.25),
+                -6px -6px 16px rgba(255, 255, 255, 0.8),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 4px rgba(0, 89, 65, 0.15);
+        }
+        .clay-primary {
+            background: #ffb38a;
+            box-shadow: 
+                8px 8px 20px rgba(217, 102, 43, 0.25),
+                -8px -8px 20px rgba(255, 255, 255, 0.9),
+                inset 3px 3px 5px rgba(255, 255, 255, 0.6),
+                inset -3px -3px 5px rgba(138, 61, 21, 0.15);
+        }
+        .clay-lavender {
+            background: #b8a8ff;
+            box-shadow: 
+                6px 6px 16px rgba(123, 92, 240, 0.25),
+                -6px -6px 16px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 4px rgba(51, 20, 153, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-primary-container/30 dark:bg-slate-900/80 backdrop-blur-md text-primary font-['Plus_Jakarta_Sans'] font-bold docked full-width top-0 rounded-b-[2rem] shadow-[0_10px_30px_-15px_rgba(255,179,138,0.5)] shadow-xl shadow-primary-container/40 dark:shadow-none fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden clay-inset">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close up portrait of a young woman with soft natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN7I1VhXbFXj_QcIWY5exnzv-heEM5skkyusJdYg7FscL5pG9a0K5NbWf_jSYc8soLV7gLJf_y-n1nPGmF02uYOLk-L5VDTy2hyQDERfGBEEa8WvtEl9n8Owh6kvH-BKMv3yZLD4mybWOigKRi5TRbpueNB_3vPbX7slgVpE9Io4B734dyHSSiPQhw240FlwYdOjBl6Eogh5qLWBaENFfNC3LPu9aaGawDdgxRovX4z9MaguVzx3zvAZ6YZ1-4p90AzfBRP9qMwjs"/>
+</div>
+<h1 class="text-xl font-black tracking-tighter text-primary">SOFT_AUDIO</h1>
+</div>
+<button class="w-10 h-10 rounded-full clay-btn flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</header>
+<main class="pt-[100px] px-6 max-w-lg mx-auto flex flex-col gap-margin">
+<!-- Mode Indicator -->
+<div class="flex justify-center">
+<div class="clay-mint rounded-full px-6 py-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface animate-pulse shadow-[0_0_8px_#ffffff]"></span>
+<span class="font-label-caps text-on-secondary-container">BIT-PERFECT</span>
+</div>
+</div>
+<!-- Album Art -->
+<div class="clay-inset rounded-[2rem] p-4 aspect-square max-w-[320px] mx-auto w-full relative">
+<div class="w-full h-full rounded-[1.5rem] overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)]">
+<img alt="Album Cover" class="w-full h-full object-cover" data-alt="Abstract soft gradient fluid shapes in pastel peach, mint and lavender colors, ethereal ambient music album cover art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALj_02xRry7oE2m6EaDLjtQQmowsz-xxfk_zpPYdzvlko5JxJdsw4uUn1QN4-FdPH0O9SUgmmj3Aec9GmEaQKuD4R4w6WxxICdoNeneL5JDvneMEtuLhRqmZke2Qp8nVuTQaH1tlSGywGnbS_fDYjexHCwuWuOWJRXKi1hCIZSTeRQUi5BTE2XX5XNR4PQ-n0QLekQg_BK2dsG6zU4i__SsZt00D09-C9baZxnaUpSiEU1J2WepDIXZYeQLiv85oNHTYOsKLiADYM"/>
+</div>
+</div>
+<!-- Track Info -->
+<div class="text-center flex flex-col gap-2">
+<h2 class="font-h2 text-on-surface">Ambient Drift</h2>
+<p class="font-body-lg text-tertiary">Ethereal Sounds</p>
+</div>
+<!-- Audio Path (Bento Style) -->
+<div class="clay-card rounded-[1.5rem] p-6 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-primary">CLEAN PATH</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex justify-between items-center relative py-2">
+<!-- Connecting Line -->
+<div class="absolute left-0 right-0 h-1 top-1/2 -translate-y-1/2 clay-inset rounded-full z-0"></div>
+<!-- Nodes -->
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-10 h-10 rounded-full clay-btn flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">smartphone</span>
+</div>
+<span class="text-[10px] font-bold text-outline uppercase">Source</span>
+</div>
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-10 h-10 rounded-full clay-lavender flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm">memory</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary uppercase">Decoder</span>
+</div>
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-10 h-10 rounded-full clay-btn flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">usb</span>
+</div>
+<span class="text-[10px] font-bold text-outline uppercase">Output</span>
+</div>
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-10 h-10 rounded-full clay-mint flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">speaker</span>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase">DAC</span>
+</div>
+</div>
+</div>
+<!-- Output Info Cards -->
+<div class="grid grid-cols-3 gap-4">
+<div class="clay-card rounded-xl p-4 flex flex-col items-center justify-center gap-1">
+<span class="text-xs font-semibold text-outline">Format</span>
+<span class="font-button text-on-surface">FLAC</span>
+</div>
+<div class="clay-card rounded-xl p-4 flex flex-col items-center justify-center gap-1">
+<span class="text-xs font-semibold text-outline">Sample Rate</span>
+<span class="font-button text-on-surface">192kHz</span>
+</div>
+<div class="clay-card rounded-xl p-4 flex flex-col items-center justify-center gap-1">
+<span class="text-xs font-semibold text-outline">Status</span>
+<span class="font-button text-secondary">Matched</span>
+</div>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center justify-center gap-6 mt-4">
+<button class="w-14 h-14 rounded-full clay-btn flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_previous</span>
+</button>
+<button class="w-20 h-20 rounded-full clay-primary flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="w-14 h-14 rounded-full clay-btn flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">skip_next</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/90 dark:bg-slate-900/90 backdrop-blur-lg font-['Plus_Jakarta_Sans'] text-[11px] font-semibold fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.9),0_15px_30px_rgba(0,0,0,0.08)] shadow-2xl shadow-primary-container/40 dark:shadow-slate-950/50 z-50 flex justify-around items-center px-4 md:hidden py-2">
+<a class="flex flex-col items-center justify-center text-outline dark:text-slate-500 px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">library_music</span>
+            Library
+        </a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 shadow-[inset_0_-2px_4px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,0.9)] hover:text-primary transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+            Player
+        </a>
+<a class="flex flex-col items-center justify-center text-outline dark:text-slate-500 px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+            Gear
+        </a>
+<a class="flex flex-col items-center justify-center text-outline dark:text-slate-500 px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

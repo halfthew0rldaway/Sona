@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -24,6 +26,15 @@ public final class FragmentEngineBinding implements ViewBinding {
   public final TextView bitPerfectStatusText;
 
   @NonNull
+  public final LinearLayout btnGrantUsbAccess;
+
+  @NonNull
+  public final LinearLayout btnOpenEqModal;
+
+  @NonNull
+  public final LinearLayout eqSectionContainer;
+
+  @NonNull
   public final TextView hardwareName;
 
   @NonNull
@@ -33,62 +44,93 @@ public final class FragmentEngineBinding implements ViewBinding {
   public final TextView hardwareStatusText;
 
   @NonNull
+  public final TextView nodeDsp;
+
+  @NonNull
+  public final LinearLayout panelOutputInfo;
+
+  @NonNull
+  public final LinearLayout pipelineNodeContainer;
+
+  @NonNull
   public final TextView productId;
 
   @NonNull
-  public final LinearLayout routeAndroidCard;
+  public final CardView routeBitperfectCard;
 
   @NonNull
-  public final View routeAndroidIndicator;
+  public final View routeBitperfectIndicator;
 
   @NonNull
-  public final TextView routeAndroidTitle;
+  public final TextView routeBitperfectTitle;
 
   @NonNull
-  public final LinearLayout routeAutoCard;
+  public final CardView routeDspCard;
 
   @NonNull
-  public final View routeAutoIndicator;
+  public final View routeDspIndicator;
 
   @NonNull
-  public final TextView routeAutoTitle;
+  public final TextView routeDspTitle;
 
   @NonNull
-  public final LinearLayout routeUsbCard;
+  public final TextView textDspHint;
 
   @NonNull
-  public final View routeUsbIndicator;
+  public final TextView textModeInfo;
 
   @NonNull
-  public final TextView routeUsbTitle;
+  public final TextView textOutputInfo;
+
+  @NonNull
+  public final TextView textSourceInfo;
+
+  @NonNull
+  public final TextView textStatusMatch;
+
+  @NonNull
+  public final ProgressBar transitionSpinner;
 
   @NonNull
   public final TextView vendorId;
 
   private FragmentEngineBinding(@NonNull NestedScrollView rootView,
-      @NonNull TextView bitPerfectStatusText, @NonNull TextView hardwareName,
-      @NonNull TextView hardwarePermissionStatus, @NonNull TextView hardwareStatusText,
-      @NonNull TextView productId, @NonNull LinearLayout routeAndroidCard,
-      @NonNull View routeAndroidIndicator, @NonNull TextView routeAndroidTitle,
-      @NonNull LinearLayout routeAutoCard, @NonNull View routeAutoIndicator,
-      @NonNull TextView routeAutoTitle, @NonNull LinearLayout routeUsbCard,
-      @NonNull View routeUsbIndicator, @NonNull TextView routeUsbTitle,
-      @NonNull TextView vendorId) {
+      @NonNull TextView bitPerfectStatusText, @NonNull LinearLayout btnGrantUsbAccess,
+      @NonNull LinearLayout btnOpenEqModal, @NonNull LinearLayout eqSectionContainer,
+      @NonNull TextView hardwareName, @NonNull TextView hardwarePermissionStatus,
+      @NonNull TextView hardwareStatusText, @NonNull TextView nodeDsp,
+      @NonNull LinearLayout panelOutputInfo, @NonNull LinearLayout pipelineNodeContainer,
+      @NonNull TextView productId, @NonNull CardView routeBitperfectCard,
+      @NonNull View routeBitperfectIndicator, @NonNull TextView routeBitperfectTitle,
+      @NonNull CardView routeDspCard, @NonNull View routeDspIndicator,
+      @NonNull TextView routeDspTitle, @NonNull TextView textDspHint,
+      @NonNull TextView textModeInfo, @NonNull TextView textOutputInfo,
+      @NonNull TextView textSourceInfo, @NonNull TextView textStatusMatch,
+      @NonNull ProgressBar transitionSpinner, @NonNull TextView vendorId) {
     this.rootView = rootView;
     this.bitPerfectStatusText = bitPerfectStatusText;
+    this.btnGrantUsbAccess = btnGrantUsbAccess;
+    this.btnOpenEqModal = btnOpenEqModal;
+    this.eqSectionContainer = eqSectionContainer;
     this.hardwareName = hardwareName;
     this.hardwarePermissionStatus = hardwarePermissionStatus;
     this.hardwareStatusText = hardwareStatusText;
+    this.nodeDsp = nodeDsp;
+    this.panelOutputInfo = panelOutputInfo;
+    this.pipelineNodeContainer = pipelineNodeContainer;
     this.productId = productId;
-    this.routeAndroidCard = routeAndroidCard;
-    this.routeAndroidIndicator = routeAndroidIndicator;
-    this.routeAndroidTitle = routeAndroidTitle;
-    this.routeAutoCard = routeAutoCard;
-    this.routeAutoIndicator = routeAutoIndicator;
-    this.routeAutoTitle = routeAutoTitle;
-    this.routeUsbCard = routeUsbCard;
-    this.routeUsbIndicator = routeUsbIndicator;
-    this.routeUsbTitle = routeUsbTitle;
+    this.routeBitperfectCard = routeBitperfectCard;
+    this.routeBitperfectIndicator = routeBitperfectIndicator;
+    this.routeBitperfectTitle = routeBitperfectTitle;
+    this.routeDspCard = routeDspCard;
+    this.routeDspIndicator = routeDspIndicator;
+    this.routeDspTitle = routeDspTitle;
+    this.textDspHint = textDspHint;
+    this.textModeInfo = textModeInfo;
+    this.textOutputInfo = textOutputInfo;
+    this.textSourceInfo = textSourceInfo;
+    this.textStatusMatch = textStatusMatch;
+    this.transitionSpinner = transitionSpinner;
     this.vendorId = vendorId;
   }
 
@@ -125,6 +167,24 @@ public final class FragmentEngineBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_grant_usb_access;
+      LinearLayout btnGrantUsbAccess = ViewBindings.findChildViewById(rootView, id);
+      if (btnGrantUsbAccess == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_open_eq_modal;
+      LinearLayout btnOpenEqModal = ViewBindings.findChildViewById(rootView, id);
+      if (btnOpenEqModal == null) {
+        break missingId;
+      }
+
+      id = R.id.eq_section_container;
+      LinearLayout eqSectionContainer = ViewBindings.findChildViewById(rootView, id);
+      if (eqSectionContainer == null) {
+        break missingId;
+      }
+
       id = R.id.hardware_name;
       TextView hardwareName = ViewBindings.findChildViewById(rootView, id);
       if (hardwareName == null) {
@@ -143,63 +203,99 @@ public final class FragmentEngineBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.node_dsp;
+      TextView nodeDsp = ViewBindings.findChildViewById(rootView, id);
+      if (nodeDsp == null) {
+        break missingId;
+      }
+
+      id = R.id.panel_output_info;
+      LinearLayout panelOutputInfo = ViewBindings.findChildViewById(rootView, id);
+      if (panelOutputInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.pipeline_node_container;
+      LinearLayout pipelineNodeContainer = ViewBindings.findChildViewById(rootView, id);
+      if (pipelineNodeContainer == null) {
+        break missingId;
+      }
+
       id = R.id.product_id;
       TextView productId = ViewBindings.findChildViewById(rootView, id);
       if (productId == null) {
         break missingId;
       }
 
-      id = R.id.route_android_card;
-      LinearLayout routeAndroidCard = ViewBindings.findChildViewById(rootView, id);
-      if (routeAndroidCard == null) {
+      id = R.id.route_bitperfect_card;
+      CardView routeBitperfectCard = ViewBindings.findChildViewById(rootView, id);
+      if (routeBitperfectCard == null) {
         break missingId;
       }
 
-      id = R.id.route_android_indicator;
-      View routeAndroidIndicator = ViewBindings.findChildViewById(rootView, id);
-      if (routeAndroidIndicator == null) {
+      id = R.id.route_bitperfect_indicator;
+      View routeBitperfectIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (routeBitperfectIndicator == null) {
         break missingId;
       }
 
-      id = R.id.route_android_title;
-      TextView routeAndroidTitle = ViewBindings.findChildViewById(rootView, id);
-      if (routeAndroidTitle == null) {
+      id = R.id.route_bitperfect_title;
+      TextView routeBitperfectTitle = ViewBindings.findChildViewById(rootView, id);
+      if (routeBitperfectTitle == null) {
         break missingId;
       }
 
-      id = R.id.route_auto_card;
-      LinearLayout routeAutoCard = ViewBindings.findChildViewById(rootView, id);
-      if (routeAutoCard == null) {
+      id = R.id.route_dsp_card;
+      CardView routeDspCard = ViewBindings.findChildViewById(rootView, id);
+      if (routeDspCard == null) {
         break missingId;
       }
 
-      id = R.id.route_auto_indicator;
-      View routeAutoIndicator = ViewBindings.findChildViewById(rootView, id);
-      if (routeAutoIndicator == null) {
+      id = R.id.route_dsp_indicator;
+      View routeDspIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (routeDspIndicator == null) {
         break missingId;
       }
 
-      id = R.id.route_auto_title;
-      TextView routeAutoTitle = ViewBindings.findChildViewById(rootView, id);
-      if (routeAutoTitle == null) {
+      id = R.id.route_dsp_title;
+      TextView routeDspTitle = ViewBindings.findChildViewById(rootView, id);
+      if (routeDspTitle == null) {
         break missingId;
       }
 
-      id = R.id.route_usb_card;
-      LinearLayout routeUsbCard = ViewBindings.findChildViewById(rootView, id);
-      if (routeUsbCard == null) {
+      id = R.id.text_dsp_hint;
+      TextView textDspHint = ViewBindings.findChildViewById(rootView, id);
+      if (textDspHint == null) {
         break missingId;
       }
 
-      id = R.id.route_usb_indicator;
-      View routeUsbIndicator = ViewBindings.findChildViewById(rootView, id);
-      if (routeUsbIndicator == null) {
+      id = R.id.text_mode_info;
+      TextView textModeInfo = ViewBindings.findChildViewById(rootView, id);
+      if (textModeInfo == null) {
         break missingId;
       }
 
-      id = R.id.route_usb_title;
-      TextView routeUsbTitle = ViewBindings.findChildViewById(rootView, id);
-      if (routeUsbTitle == null) {
+      id = R.id.text_output_info;
+      TextView textOutputInfo = ViewBindings.findChildViewById(rootView, id);
+      if (textOutputInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.text_source_info;
+      TextView textSourceInfo = ViewBindings.findChildViewById(rootView, id);
+      if (textSourceInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.text_status_match;
+      TextView textStatusMatch = ViewBindings.findChildViewById(rootView, id);
+      if (textStatusMatch == null) {
+        break missingId;
+      }
+
+      id = R.id.transition_spinner;
+      ProgressBar transitionSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (transitionSpinner == null) {
         break missingId;
       }
 
@@ -210,9 +306,12 @@ public final class FragmentEngineBinding implements ViewBinding {
       }
 
       return new FragmentEngineBinding((NestedScrollView) rootView, bitPerfectStatusText,
-          hardwareName, hardwarePermissionStatus, hardwareStatusText, productId, routeAndroidCard,
-          routeAndroidIndicator, routeAndroidTitle, routeAutoCard, routeAutoIndicator,
-          routeAutoTitle, routeUsbCard, routeUsbIndicator, routeUsbTitle, vendorId);
+          btnGrantUsbAccess, btnOpenEqModal, eqSectionContainer, hardwareName,
+          hardwarePermissionStatus, hardwareStatusText, nodeDsp, panelOutputInfo,
+          pipelineNodeContainer, productId, routeBitperfectCard, routeBitperfectIndicator,
+          routeBitperfectTitle, routeDspCard, routeDspIndicator, routeDspTitle, textDspHint,
+          textModeInfo, textOutputInfo, textSourceInfo, textStatusMatch, transitionSpinner,
+          vendorId);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

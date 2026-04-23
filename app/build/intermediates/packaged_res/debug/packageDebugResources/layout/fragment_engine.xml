@@ -3,571 +3,562 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:clipToPadding="false"
+    android:background="@color/canvas_bg"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="20dp"
         android:paddingBottom="24dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter"
-            android:letterSpacing="-0.04"
-            android:text="ENGINE"
-            android:textColor="@color/on_surface"
-            android:textSize="52sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/space_grotesk"
-            android:letterSpacing="0.16"
-            android:text="AUDIO CONFIGURATION / INTERFACE CONTROL"
-            android:textColor="@color/on_surface_variant"
-            android:textSize="11sp"
-            android:textStyle="bold" />
-
+        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/bg_panel_card_low"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="14dp">
-
-            <View
-                android:layout_width="8dp"
-                android:layout_height="8dp"
-                android:background="@drawable/bg_circle_secondary" />
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="20dp">
 
             <TextView
-                android:id="@+id/bit_perfect_status_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.1"
-                android:text="AUTO ROUTING ENABLED"
-                android:textColor="@color/secondary"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.18"
-                android:text="ROUTE SELECTION"
-                android:textColor="@color/outline"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:background="@drawable/bg_circle_surface"
-                android:gravity="center"
-                android:text="i"
-                android:textColor="@color/on_surface_variant"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/route_auto_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="@drawable/bg_route_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="18dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/route_auto_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter"
-                    android:text="Auto (USB Preferred)"
-                    android:textColor="@color/on_surface"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Automatically detects and routes audio to high-fidelity USB interfaces when connected."
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/route_auto_indicator"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/bg_route_indicator" />
-        </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp">
-
-            <LinearLayout
-                android:id="@+id/route_usb_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_route_card"
+                android:fontFamily="@font/inter"
+                android:letterSpacing="-0.02"
+                android:text="Engine"
+                android:textColor="@color/accent_warm"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/transition_spinner"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginTop="-30dp"
+                android:indeterminateTint="@color/accent_warm"
+                android:visibility="gone" />
+
+            <!-- Status indicator -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="18dp">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/route_usb_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter"
-                        android:text="USB Only (Strict Bit-Perfect)"
-                        android:textColor="@color/on_surface"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Bypasses system mixers entirely. Direct hardware communication for uncolored audio reproduction."
-                        android:textColor="@color/on_surface_variant"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/bg_chip_secondary"
-                        android:fontFamily="@font/space_grotesk"
-                        android:paddingHorizontal="10dp"
-                        android:paddingVertical="5dp"
-                        android:text="VERIFIED LOW JITTER"
-                        android:textColor="@color/on_secondary"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                android:orientation="horizontal">
 
                 <View
-                    android:id="@+id/route_usb_indicator"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:background="@drawable/bg_route_indicator" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
-                android:layout_marginTop="-2dp"
-                android:layout_marginEnd="18dp"
-                android:background="@drawable/bg_primary_button"
-                android:fontFamily="@font/space_grotesk"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"
-                android:text="RECOMMENDED"
-                android:textColor="@color/on_primary"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-        </FrameLayout>
-
-        <LinearLayout
-            android:id="@+id/route_android_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/bg_route_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="18dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:backgroundTint="@color/accent_warm" />
 
                 <TextView
-                    android:id="@+id/route_android_title"
+                    android:id="@+id/bit_perfect_status_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter"
-                    android:text="System Only"
-                    android:textColor="@color/on_surface"
-                    android:textSize="18sp"
+                    android:layout_marginStart="9dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:letterSpacing="0.08"
+                    android:text="AUTO ROUTING ENABLED"
+                    android:textColor="@color/accent_warm"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Routes audio through the OS default mixer. Recommended for general browsing."
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="15sp" />
             </LinearLayout>
-
-            <View
-                android:id="@+id/route_android_indicator"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/bg_route_indicator" />
         </LinearLayout>
 
+        <!-- Route selection -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:background="@drawable/bg_panel_card_low"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:paddingHorizontal="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_panel_card"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:fontFamily="@font/space_grotesk"
+                android:letterSpacing="0.18"
+                android:text="PLAYBACK MODE"
+                android:textColor="@color/outline_dark"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Cards Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp">
+
+            <!-- Bit-Perfect -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/route_bitperfect_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <FrameLayout
-                        android:layout_width="52dp"
-                        android:layout_height="52dp"
-                        android:background="@drawable/bg_circle_surface">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_manage"
-                            app:tint="@color/primary_container" />
-                    </FrameLayout>
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="16dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/route_bitperfect_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/space_grotesk"
-                            android:letterSpacing="0.12"
-                            android:text="DETECTED HARDWARE"
-                            android:textColor="@color/outline"
-                            android:textSize="10sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/hardware_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/inter"
-                            android:text="No DAC Connected"
-                            android:textColor="@color/on_surface"
-                            android:textSize="22sp"
+                            android:text="Bit-Perfect Mode"
+                            android:textColor="@color/text_primary_soft"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/hardware_status_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Connect a compatible USB DAC to unlock direct playback."
-                            android:textColor="@color/on_surface_variant"
-                            android:textSize="14sp" />
+                            android:layout_marginTop="3dp"
+                            android:text="Clean, unprocessed, matched sample rate playback (avoids resamplers)"
+                            android:textColor="@color/text_secondary_soft"
+                            android:textSize="13sp" />
                     </LinearLayout>
+
+                    <View
+                        android:id="@+id/route_bitperfect_indicator"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/bg_mode_pill"
+                        android:backgroundTint="@color/accent_warm" />
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- DSP Mode -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/route_dsp_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/space_grotesk"
-                            android:letterSpacing="0.12"
-                            android:text="VENDOR"
-                            android:textColor="@color/outline_variant"
-                            android:textSize="10sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/vendor_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:fontFamily="@font/space_grotesk"
-                            android:text="--"
-                            android:textColor="@color/on_surface"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/space_grotesk"
-                            android:letterSpacing="0.12"
-                            android:text="PRODUCT ID"
-                            android:textColor="@color/outline_variant"
-                            android:textSize="10sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/product_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:fontFamily="@font/space_grotesk"
-                            android:text="--"
-                            android:textColor="@color/on_surface"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:background="@drawable/bg_panel_slot"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/space_grotesk"
-                        android:letterSpacing="0.16"
-                        android:text="SUPPORTED FORMATS"
-                        android:textColor="@color/primary_container"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_chip_surface"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="PCM 44.1kHz"
-                            android:textColor="@color/on_surface_variant"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/bg_chip_surface"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="PCM 192kHz"
-                            android:textColor="@color/on_surface_variant"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/bg_chip_surface"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="PCM 384kHz"
-                            android:textColor="@color/on_surface_variant"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_chip_primary"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="PCM 768kHz"
-                            android:textColor="@color/primary"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/bg_chip_secondary"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="DSD512 (Native)"
-                            android:textColor="@color/on_secondary"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="16dp">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/space_grotesk"
-                        android:letterSpacing="0.12"
-                        android:text="INTERFACE STATUS"
-                        android:textColor="@color/outline"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/hardware_permission_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/space_grotesk"
-                        android:text="WAITING FOR HARDWARE"
-                        android:textColor="@color/on_surface"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/route_dsp_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter"
+                            android:text="DSP Mode"
+                            android:textColor="@color/text_primary_soft"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Flexible processing with float support and software enhancements"
+                            android:textColor="@color/text_secondary_soft"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/route_dsp_indicator"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/bg_mode_pill"
+                        android:backgroundTint="@color/accent_lavender_light" />
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Pipeline Node View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp">
+            
+            <LinearLayout
+                android:id="@+id/pipeline_node_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_mode_pill"
+                android:backgroundTint="@color/card_inset"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Source → Decoder" android:textColor="@color/accent_warm" android:fontFamily="@font/space_grotesk" android:textSize="10sp" android:textStyle="bold" />
+                <TextView android:id="@+id/node_dsp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" → DSP" android:textColor="@color/accent_lavender" android:fontFamily="@font/space_grotesk" android:textSize="10sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" → AudioTrack → DAC" android:textColor="@color/accent_mint" android:fontFamily="@font/space_grotesk" android:textSize="10sp" android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Output Info Panel -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/bg_panel_card"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_card_high" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="84dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_card_high" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_card_high" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="72dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_card_high" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="54dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_primary_button" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_card_high" />
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:layout_marginTop="16dp">
+            
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp">
+                
+                    <LinearLayout
+                        android:id="@+id/panel_output_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp">
+                        <TextView android:id="@+id/text_source_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary_soft" android:fontFamily="@font/inter" android:textStyle="bold" android:textSize="13sp" />
+                        <TextView android:id="@+id/text_output_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/accent_lavender" android:fontFamily="@font/inter" android:textStyle="bold" android:textSize="13sp" android:layout_marginTop="4dp" />
+                        <TextView android:id="@+id/text_mode_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_secondary_soft" android:fontFamily="@font/inter" android:textSize="12sp" android:layout_marginTop="4dp" />
+                        <TextView android:id="@+id/text_status_match" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/accent_mint" android:fontFamily="@font/space_grotesk" android:textStyle="bold" android:textSize="11sp" android:layout_marginTop="6dp" />
+                    </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
+        <!-- Settings Validation Hint -->
         <TextView
+            android:id="@+id/text_dsp_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_secondary_button"
+            android:text="DSP disabled in Bit-Perfect Mode"
             android:gravity="center"
-            android:paddingHorizontal="18dp"
-            android:paddingVertical="16dp"
-            android:text="Route changes apply immediately. Connect a DAC and start playback to verify the active path."
-            android:textColor="@color/on_surface_variant"
-            android:textSize="14sp" />
+            android:textColor="@color/accent_warm"
+            android:fontFamily="@font/inter"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- EQ Section -->
+        <LinearLayout
+            android:id="@+id/eq_section_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/space_grotesk"
+                        android:letterSpacing="0.18"
+                        android:text="ADVANCED EQUALIZER"
+                        android:textColor="@color/accent_lavender"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <!-- Launch Modal Button -->
+                    <LinearLayout
+                        android:id="@+id/btn_open_eq_modal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_mode_pill"
+                        android:backgroundTint="@color/accent_lavender_xlight"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingVertical="14dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_manage"
+                            app:tint="@color/accent_lavender" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/space_grotesk"
+                            android:letterSpacing="0.06"
+                            android:text="OPEN 10-BAND EQ"
+                            android:textColor="@color/accent_lavender"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Hardware section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_grotesk"
+                android:letterSpacing="0.18"
+                android:text="DETECTED HARDWARE"
+                android:textColor="@color/outline_dark"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Hardware card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp">
+            
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_mode_pill"
+                            android:backgroundTint="@color/card_inset">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_manage"
+                                app:tint="@color/accent_warm" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/hardware_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter"
+                                android:text="No DAC Connected"
+                                android:textColor="@color/text_primary_soft"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/hardware_status_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Connect a compatible USB DAC."
+                                android:textColor="@color/text_secondary_soft"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- ID row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_mode_pill"
+                        android:backgroundTint="@color/card_inset"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:letterSpacing="0.12"
+                                android:text="VENDOR"
+                                android:textColor="@color/outline_dark"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/vendor_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="--"
+                                android:textColor="@color/text_primary_soft"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:letterSpacing="0.12"
+                                android:text="PRODUCT"
+                                android:textColor="@color/outline_dark"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/product_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="--"
+                                android:textColor="@color/text_primary_soft"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:letterSpacing="0.12"
+                                android:text="ACCESS"
+                                android:textColor="@color/outline_dark"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/hardware_permission_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="--"
+                                android:textColor="@color/text_primary_soft"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Grant access button — only visible when permission needed -->
+                    <LinearLayout
+                        android:id="@+id/btn_grant_usb_access"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_mode_pill"
+                        android:backgroundTint="@color/accent_mint_light"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingVertical="14dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_manage"
+                            app:tint="@color/accent_mint_dark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/space_grotesk"
+                            android:letterSpacing="0.06"
+                            android:text="GRANT USB ACCESS"
+                            android:textColor="@color/accent_mint_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -1,48 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Primary Colors -->
-    <color name="primary">#C3F5FF</color>
-    <color name="on_primary">#00363D</color>
-    <color name="primary_container">#00E5FF</color>
-    <color name="on_primary_container">#001F24</color>
-    <color name="primary_fixed_dim">#00DAF3</color>
+    <!-- Material3 system tokens (kept for theme compat) -->
+    <color name="primary">#D9662B</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#FFE8D6</color>
+    <color name="on_primary_container">#5C1F00</color>
+    <color name="primary_fixed_dim">#FFB38A</color>
 
-    <!-- Secondary Colors (Gold/Brass) -->
-    <color name="secondary">#E9C349</color>
-    <color name="on_secondary">#3C2F00</color>
-    <color name="secondary_container">#AF8D11</color>
-    <color name="on_secondary_container">#342800</color>
-    <color name="secondary_fixed_dim">#E9C349</color>
+    <color name="secondary">#7B5CF0</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#EDE8FF</color>
+    <color name="on_secondary_container">#2D0085</color>
+    <color name="secondary_fixed_dim">#B8A8FF</color>
 
-    <!-- Surface Colors -->
-    <color name="surface">#131313</color>
-    <color name="on_surface">#E5E2E1</color>
-    <color name="on_surface_variant">#BAC9CC</color>
-    <color name="surface_container_lowest">#0E0E0E</color>
-    <color name="surface_container_low">#1C1B1B</color>
-    <color name="surface_container">#201F1F</color>
-    <color name="surface_container_high">#2A2A2A</color>
-    <color name="surface_container_highest">#353534</color>
-    <color name="surface_variant">#353534</color>
-    <color name="surface_dim">#131313</color>
-    <color name="surface_tint">#00DAF3</color>
+    <color name="surface">#FDFCFB</color>
+    <color name="on_surface">#1F1A17</color>
+    <color name="on_surface_variant">#8A7A70</color>
+    <color name="surface_container_lowest">#FDFCFB</color>
+    <color name="surface_container_low">#F8F4F0</color>
+    <color name="surface_container">#F2EEE9</color>
+    <color name="surface_container_high">#EDE8E2</color>
+    <color name="surface_container_highest">#E6E0D8</color>
+    <color name="surface_variant">#EDE8E2</color>
+    <color name="surface_dim">#D6C9C1</color>
+    <color name="surface_tint">#D9662B</color>
 
-    <!-- Neutral/Outline -->
-    <color name="outline">#849396</color>
-    <color name="outline_variant">#3B494C</color>
-    <color name="inverse_surface">#E5E2E1</color>
-    <color name="inverse_on_surface">#313030</color>
+    <color name="outline">#8A7A70</color>
+    <color name="outline_variant">#D6C9C1</color>
+    <color name="inverse_surface">#1F1A17</color>
+    <color name="inverse_on_surface">#FDFCFB</color>
 
     <!-- Error -->
-    <color name="error">#FFB4AB</color>
-    <color name="on_error">#690005</color>
-    <color name="error_container">#93000A</color>
-    <color name="on_error_container">#FFDAD6</color>
+    <color name="error">#C0392B</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="on_error_container">#690005</color>
 
-    <!-- Transparent Colors -->
-    <color name="outline_variant_15">#263B494C</color> <!-- 15% opacity -->
-    <color name="primary_container_40">#6600E5FF</color> <!-- 40% opacity -->
-    <color name="primary_container_18">#2E00E5FF</color>
-    <color name="primary_container_12">#1F00E5FF</color>
-    <color name="surface_scrim">#CC131313</color>
+    <!-- Transparent overlays -->
+    <color name="outline_variant_15">#26D6C9C1</color>
+    <color name="primary_container_40">#66FFE8D6</color>
+    <color name="primary_container_18">#2EFFE8D6</color>
+    <color name="primary_container_12">#1FFFE8D6</color>
+    <color name="surface_scrim">#88000000</color>
+
+    <!-- ══ Design System ══ -->
+
+    <!-- Surfaces -->
+    <color name="canvas_bg">#FDFCFB</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="card_inset">#F2EEE9</color>
+    <color name="card_active_bg">#FFF3EC</color>
+
+    <!-- Warm Orange (primary accent) -->
+    <color name="accent_warm">#D9662B</color>
+    <color name="accent_warm_light">#FFB38A</color>
+    <color name="accent_warm_xlight">#FFE8D6</color>
+    <color name="accent_warm_dark">#A3431A</color>
+
+    <!-- Emerald / Mint (positive, matched state) -->
+    <color name="accent_mint">#00A878</color>
+    <color name="accent_mint_dark">#006B4C</color>
+    <color name="accent_mint_light">#B3F0DC</color>
+    <color name="accent_mint_xlight">#E0FAF2</color>
+
+    <!-- Violet / Lavender (decoder, secondary UI) -->
+    <color name="accent_lavender">#7B5CF0</color>
+    <color name="accent_lavender_dark">#4D2FB3</color>
+    <color name="accent_lavender_light">#D4CCFF</color>
+    <color name="accent_lavender_xlight">#EDE8FF</color>
+
+    <!-- Coral (mismatch / error states) -->
+    <color name="accent_coral">#E05252</color>
+    <color name="accent_coral_light">#FFD6D6</color>
+
+    <!-- Amber (format badge, secondary info) -->
+    <color name="accent_amber">#E8962A</color>
+    <color name="accent_amber_dark">#C47112</color>
+    <color name="accent_amber_light">#FFE8B0</color>
+    <color name="accent_amber_xlight">#FFF4DB</color>
+
+    <!-- Text hierarchy -->
+    <color name="text_primary_soft">#1F1A17</color>
+    <color name="text_secondary_soft">#6B5B50</color>
+    <color name="text_accent_soft">#D9662B</color>
+    <color name="text_on_vibrant">#FFFFFF</color>
+
+    <!-- Borders / outlines -->
+    <color name="outline_soft">#E2D8CE</color>
+    <color name="outline_dark">#8A7A70</color>
+
+    <!-- Format badges (on tinted backgrounds) -->
+    <color name="badge_flac">#D9662B</color>
+    <color name="badge_flac_bg">#FFE8D6</color>
+    <color name="badge_wav">#00A878</color>
+    <color name="badge_wav_bg">#E0FAF2</color>
+    <color name="badge_mp3">#7B5CF0</color>
+    <color name="badge_mp3_bg">#EDE8FF</color>
+    <color name="badge_aac">#E8962A</color>
+    <color name="badge_aac_bg">#FFE8B0</color>
+
+    <!-- Signal path node colours -->
+    <color name="node_source">#A3431A</color>
+    <color name="node_decoder">#4D2FB3</color>
+    <color name="node_dsp">#008060</color>
+    <color name="node_output">#A3431A</color>
+    <color name="node_dac">#006B4C</color>
+
+    <!-- Bottom nav -->
+    <color name="bottom_nav_soft">#FFFFFF</color>
+    <color name="bottom_nav_active">#D9662B</color>
+    <color name="bottom_nav_inactive">#8A7A70</color>
+    <color name="bottom_nav_indicator">#FFE8D6</color>
 </resources>

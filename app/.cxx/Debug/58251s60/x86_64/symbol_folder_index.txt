@@ -1,0 +1,1 @@
+/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86_64

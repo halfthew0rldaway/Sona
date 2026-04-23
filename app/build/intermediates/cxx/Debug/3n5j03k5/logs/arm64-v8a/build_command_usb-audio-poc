@@ -1,4 +1,0 @@
-/home/bleu/Android/Sdk/cmake/3.22.1/bin/ninja \
-  -C \
-  /home/bleu/uapp_wannabe/app/.cxx/Debug/3n5j03k5/arm64-v8a \
-  usb-audio-poc

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/card_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_mode_pill"
+        android:backgroundTint="@color/outline_soft" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/space_grotesk"
+        android:letterSpacing="-0.02"
+        android:text="10-BAND EQUALIZER"
+        android:textColor="@color/accent_lavender"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:fillViewport="true">
+        
+        <LinearLayout
+            android:id="@+id/eq_sliders_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+            <!-- Programmatically populate or hardcode 10 sliders here, but hardcoding in layout is fast -->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

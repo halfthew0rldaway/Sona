@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:2:1-26:12
 MERGED from [androidx.databinding:viewbinding:8.5.2] /home/bleu/.gradle/caches/transforms-4/c55ba565e7002d28baa4a5bbef2c5721/transformed/viewbinding-8.5.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.2] /home/bleu/.gradle/caches/transforms-4/77c71b294cb39c4f3eabe51a9a7b5ae1/transformed/navigation-common-2.8.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.8.2] /home/bleu/.gradle/caches/transforms-4/bacef3756661682cb56f1fd36e664cdb/transformed/navigation-common-ktx-2.8.2/AndroidManifest.xml:2:1-7:12
@@ -17,11 +17,13 @@ MERGED from [com.google.android.material:material:1.12.0] /home/bleu/.gradle/cac
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/bleu/.gradle/caches/transforms-4/e97b8fec522e0237fe171c43b96f412b/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bleu/.gradle/caches/transforms-4/3284b1fe802a3f384d6e1862779d2989/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] /home/bleu/.gradle/caches/transforms-4/36b3856ba9c7cbbdc36c1fd5fe2a4d44/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bleu/.gradle/caches/transforms-4/94d31c5817af2daa94c50455e2cb418d/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /home/bleu/.gradle/caches/transforms-4/71ce8e770ba3f8c0ed42099b307d28d4/transformed/recyclerview-1.3.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /home/bleu/.gradle/caches/transforms-4/dd7353f748a41fc046eb17e227070521/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bleu/.gradle/caches/transforms-4/4462579622e5bbf88edc5cb053380b24/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.6.2] /home/bleu/.gradle/caches/transforms-4/6fb1edfffdac9d558aabd808fe183459/transformed/fragment-1.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.9.2] /home/bleu/.gradle/caches/transforms-4/b6db2cee2fdda9ba9aa5d3aaece07070/transformed/activity-1.9.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.9.2] /home/bleu/.gradle/caches/transforms-4/ce637d737b4899a942ab80b22481f735/transformed/activity-ktx-1.9.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media:media:1.7.0] /home/bleu/.gradle/caches/transforms-4/af4a4501f4720d1eb4a0cb4841bced2d/transformed/media-1.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bleu/.gradle/caches/transforms-4/dc9369d3a3308050fc6782cf03ea6014/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bleu/.gradle/caches/transforms-4/192474c036ec43764acdf6f3e34ae042/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bleu/.gradle/caches/transforms-4/25d7a0acfcd36a88cec5870374c1add7/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
@@ -33,11 +35,11 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bleu/.
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bleu/.gradle/caches/transforms-4/54f7211a0261829208bd57042dfaa330/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bleu/.gradle/caches/transforms-4/55ce5ac59d6f676405b119063dd7e761/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/bleu/.gradle/caches/transforms-4/e2846cd86094a5772d00090bc5999692/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bleu/.gradle/caches/transforms-4/259b2081233595c989a7e45582d126cf/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bleu/.gradle/caches/transforms-4/8cf63126afecb5baa428a1cf8e5c8ba0/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /home/bleu/.gradle/caches/transforms-4/c8abdcdcc7e40002f4f911bf76bc086d/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0] /home/bleu/.gradle/caches/transforms-4/53d6f4f37c5743a28bc1f83cb31e6436/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.core:core:1.13.1] /home/bleu/.gradle/caches/transforms-4/8e0a0bff2d388b6446750efdf4a5758f/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bleu/.gradle/caches/transforms-4/ca320cc04769201d96ae35a18d4b1c24/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bleu/.gradle/caches/transforms-4/4b0189ef96502ad6c8505175b508ab6e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /home/bleu/.gradle/caches/transforms-4/4bd627a9048f6ce18b1b2d88bd05a714/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /home/bleu/.gradle/caches/transforms-4/45a37b7e668e2f48c7b1e2d301f540bf/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
@@ -53,6 +55,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /home/bleu
 MERGED from [androidx.core:core-ktx:1.13.1] /home/bleu/.gradle/caches/transforms-4/ee0481a11330c26fe06a00831ef0481b/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/bleu/.gradle/caches/transforms-4/0eb5b216ac68d58d5ef4ed40739f717e/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bleu/.gradle/caches/transforms-4/e76f1b767bbdaf61093fe6fdbd88b122/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/bleu/.gradle/caches/transforms-4/4231e0f5e7e82781e70369ed8bbbd417/transformed/documentfile-1.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bleu/.gradle/caches/transforms-4/c829f663b97a5e70a3d902a476572ec8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bleu/.gradle/caches/transforms-4/4e16cc280eaa0a1f5277c41379c36ea2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/bleu/.gradle/caches/transforms-4/0caa330c8a83ae3d8aab7b79813c903a/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -60,7 +63,6 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bleu/.gradle/caches
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bleu/.gradle/caches/transforms-4/705c330e03d4e2fcb62a924d14782115/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /home/bleu/.gradle/caches/transforms-4/3cd12336f22dc1b12fb756d64dc91d51/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bleu/.gradle/caches/transforms-4/35b3db2516afa50d8f7eeea7a2525269/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bleu/.gradle/caches/transforms-4/7eeba137b4e900d8dd11fc49312bc148/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bleu/.gradle/caches/transforms-4/e1270e825345b4a55e6210845cc44caf/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/bleu/.gradle/caches/transforms-4/ffc1bb41ed0ccd9337c57458e0cedafc/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 	package
@@ -77,9 +79,13 @@ ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:4:5-6:36
 		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:6:9-33
 	android:name
 		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:5:9-49
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:8:22-74
 application
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:8:5-22:19
-INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:8:5-22:19
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:10:5-24:19
+INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:10:5-24:19
 MERGED from [com.google.android.material:material:1.12.0] /home/bleu/.gradle/caches/transforms-4/30dbe09adc47a6fa3161e128d9fbb6b2/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /home/bleu/.gradle/caches/transforms-4/30dbe09adc47a6fa3161e128d9fbb6b2/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bleu/.gradle/caches/transforms-4/3284b1fe802a3f384d6e1862779d2989/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
@@ -103,29 +109,29 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bleu/.gradle/caches/t
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /home/bleu/.gradle/caches/transforms-4/8e0a0bff2d388b6446750efdf4a5758f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:12:9-41
 	android:allowBackup
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:12:9-49
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:14:9-49
 activity#dev.bleu.usbaudiopoc.MainActivity
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:13:9-21:20
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:15:9-23:20
 	android:exported
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:15:13-36
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:14:13-41
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml:21:27-74
 uses-sdk
 INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/bleu/uapp_wannabe/app/src/main/AndroidManifest.xml
@@ -156,8 +162,10 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bleu/.gradl
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bleu/.gradle/caches/transforms-4/3284b1fe802a3f384d6e1862779d2989/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.7.0] /home/bleu/.gradle/caches/transforms-4/36b3856ba9c7cbbdc36c1fd5fe2a4d44/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] /home/bleu/.gradle/caches/transforms-4/36b3856ba9c7cbbdc36c1fd5fe2a4d44/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bleu/.gradle/caches/transforms-4/94d31c5817af2daa94c50455e2cb418d/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bleu/.gradle/caches/transforms-4/94d31c5817af2daa94c50455e2cb418d/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /home/bleu/.gradle/caches/transforms-4/71ce8e770ba3f8c0ed42099b307d28d4/transformed/recyclerview-1.3.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /home/bleu/.gradle/caches/transforms-4/71ce8e770ba3f8c0ed42099b307d28d4/transformed/recyclerview-1.3.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /home/bleu/.gradle/caches/transforms-4/dd7353f748a41fc046eb17e227070521/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /home/bleu/.gradle/caches/transforms-4/dd7353f748a41fc046eb17e227070521/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bleu/.gradle/caches/transforms-4/4462579622e5bbf88edc5cb053380b24/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bleu/.gradle/caches/transforms-4/4462579622e5bbf88edc5cb053380b24/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] /home/bleu/.gradle/caches/transforms-4/6fb1edfffdac9d558aabd808fe183459/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
@@ -166,6 +174,8 @@ MERGED from [androidx.activity:activity:1.9.2] /home/bleu/.gradle/caches/transfo
 MERGED from [androidx.activity:activity:1.9.2] /home/bleu/.gradle/caches/transforms-4/b6db2cee2fdda9ba9aa5d3aaece07070/transformed/activity-1.9.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-ktx:1.9.2] /home/bleu/.gradle/caches/transforms-4/ce637d737b4899a942ab80b22481f735/transformed/activity-ktx-1.9.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity-ktx:1.9.2] /home/bleu/.gradle/caches/transforms-4/ce637d737b4899a942ab80b22481f735/transformed/activity-ktx-1.9.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.7.0] /home/bleu/.gradle/caches/transforms-4/af4a4501f4720d1eb4a0cb4841bced2d/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.7.0] /home/bleu/.gradle/caches/transforms-4/af4a4501f4720d1eb4a0cb4841bced2d/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bleu/.gradle/caches/transforms-4/dc9369d3a3308050fc6782cf03ea6014/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bleu/.gradle/caches/transforms-4/dc9369d3a3308050fc6782cf03ea6014/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bleu/.gradle/caches/transforms-4/192474c036ec43764acdf6f3e34ae042/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
@@ -188,8 +198,6 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bleu/.gradle
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bleu/.gradle/caches/transforms-4/55ce5ac59d6f676405b119063dd7e761/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/bleu/.gradle/caches/transforms-4/e2846cd86094a5772d00090bc5999692/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/bleu/.gradle/caches/transforms-4/e2846cd86094a5772d00090bc5999692/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bleu/.gradle/caches/transforms-4/259b2081233595c989a7e45582d126cf/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bleu/.gradle/caches/transforms-4/259b2081233595c989a7e45582d126cf/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bleu/.gradle/caches/transforms-4/8cf63126afecb5baa428a1cf8e5c8ba0/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bleu/.gradle/caches/transforms-4/8cf63126afecb5baa428a1cf8e5c8ba0/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] /home/bleu/.gradle/caches/transforms-4/c8abdcdcc7e40002f4f911bf76bc086d/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -198,6 +206,8 @@ MERGED from [androidx.window:window:1.0.0] /home/bleu/.gradle/caches/transforms-
 MERGED from [androidx.window:window:1.0.0] /home/bleu/.gradle/caches/transforms-4/53d6f4f37c5743a28bc1f83cb31e6436/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.13.1] /home/bleu/.gradle/caches/transforms-4/8e0a0bff2d388b6446750efdf4a5758f/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.13.1] /home/bleu/.gradle/caches/transforms-4/8e0a0bff2d388b6446750efdf4a5758f/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bleu/.gradle/caches/transforms-4/ca320cc04769201d96ae35a18d4b1c24/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bleu/.gradle/caches/transforms-4/ca320cc04769201d96ae35a18d4b1c24/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bleu/.gradle/caches/transforms-4/4b0189ef96502ad6c8505175b508ab6e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bleu/.gradle/caches/transforms-4/4b0189ef96502ad6c8505175b508ab6e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /home/bleu/.gradle/caches/transforms-4/4bd627a9048f6ce18b1b2d88bd05a714/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
@@ -228,6 +238,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/bleu/.grad
 MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/bleu/.gradle/caches/transforms-4/0eb5b216ac68d58d5ef4ed40739f717e/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bleu/.gradle/caches/transforms-4/e76f1b767bbdaf61093fe6fdbd88b122/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bleu/.gradle/caches/transforms-4/e76f1b767bbdaf61093fe6fdbd88b122/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/bleu/.gradle/caches/transforms-4/4231e0f5e7e82781e70369ed8bbbd417/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/bleu/.gradle/caches/transforms-4/4231e0f5e7e82781e70369ed8bbbd417/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bleu/.gradle/caches/transforms-4/c829f663b97a5e70a3d902a476572ec8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bleu/.gradle/caches/transforms-4/c829f663b97a5e70a3d902a476572ec8/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bleu/.gradle/caches/transforms-4/4e16cc280eaa0a1f5277c41379c36ea2/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
@@ -242,8 +254,6 @@ MERGED from [androidx.tracing:tracing:1.0.0] /home/bleu/.gradle/caches/transform
 MERGED from [androidx.tracing:tracing:1.0.0] /home/bleu/.gradle/caches/transforms-4/3cd12336f22dc1b12fb756d64dc91d51/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bleu/.gradle/caches/transforms-4/35b3db2516afa50d8f7eeea7a2525269/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bleu/.gradle/caches/transforms-4/35b3db2516afa50d8f7eeea7a2525269/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bleu/.gradle/caches/transforms-4/7eeba137b4e900d8dd11fc49312bc148/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bleu/.gradle/caches/transforms-4/7eeba137b4e900d8dd11fc49312bc148/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bleu/.gradle/caches/transforms-4/e1270e825345b4a55e6210845cc44caf/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bleu/.gradle/caches/transforms-4/e1270e825345b4a55e6210845cc44caf/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/bleu/.gradle/caches/transforms-4/ffc1bb41ed0ccd9337c57458e0cedafc/transformed/print-1.0.0/AndroidManifest.xml:20:5-44

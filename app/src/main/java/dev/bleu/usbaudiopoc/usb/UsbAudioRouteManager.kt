@@ -67,10 +67,24 @@ class UsbAudioRouteManager(context: Context) : Closeable {
             UsbRouteState(
                 compatibleDevice = compatible,
                 hasPermission = permission,
-                description = "USB route: $productName (${if (permission) "permission granted" else "permission required"})",
+                description = "USB route: $productName (${if (permission) "ready" else "tap to grant access"})",
             )
         }
+        val previous = _usbState.value
         _usbState.value = state
+        // Auto-request permission when a new device is detected without permission
+        val newDevice = state.compatibleDevice
+        if (newDevice != null && !state.hasPermission && previous.compatibleDevice?.deviceId != newDevice.deviceId) {
+            Log.i(TAG, "Auto-requesting permission for newly detected device ${newDevice.deviceName}")
+            usbManager.requestPermission(newDevice, permissionIntent)
+        }
+    }
+
+    fun requestPermissionForCurrentDevice() {
+        val device = _usbState.value.compatibleDevice ?: return
+        if (!usbManager.hasPermission(device)) {
+            usbManager.requestPermission(device, permissionIntent)
+        }
     }
 
     suspend fun openPlaybackSessionOrNull(): UsbPlaybackSession? {
@@ -115,23 +129,29 @@ class UsbAudioRouteManager(context: Context) : Closeable {
     }
 
     private fun isCompatibleUsbAudioDevice(device: UsbDevice): Boolean {
+        // Reject if there's no product name at all — likely a hub or cable
+        // (real DACs always advertise a product name)
+        if (device.productName.isNullOrBlank() && device.manufacturerName.isNullOrBlank()) return false
+
+        var foundAudioStreaming = false
         for (index in 0 until device.interfaceCount) {
             val usbInterface = device.getInterface(index)
             val isAudioStreaming = usbInterface.interfaceClass == UsbConstants.USB_CLASS_AUDIO &&
                 usbInterface.interfaceSubclass == AUDIO_SUBCLASS_STREAMING
-            if (!isAudioStreaming) {
-                continue
-            }
+            if (!isAudioStreaming) continue
+
             for (endpointIndex in 0 until usbInterface.endpointCount) {
                 val endpoint = usbInterface.getEndpoint(endpointIndex)
                 if (endpoint.direction == UsbConstants.USB_DIR_OUT &&
                     endpoint.type == UsbConstants.USB_ENDPOINT_XFER_ISOC
                 ) {
-                    return true
+                    foundAudioStreaming = true
+                    break
                 }
             }
+            if (foundAudioStreaming) break
         }
-        return false
+        return foundAudioStreaming
     }
 
     private fun registerReceiver() {

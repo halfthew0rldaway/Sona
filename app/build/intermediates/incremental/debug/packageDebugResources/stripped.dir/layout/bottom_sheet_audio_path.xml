@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/card_bg"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="28dp">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_mode_pill"
+        android:backgroundTint="@color/outline_soft" />
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_mode_pill"
+            android:backgroundTint="@color/accent_lavender_xlight"
+            android:gravity="center"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_manage"
+                app:tint="@color/accent_lavender" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/space_grotesk"
+            android:letterSpacing="0.07"
+            android:text="AUDIO PATH"
+            android:textColor="@color/text_primary_soft"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- Mode badge -->
+        <LinearLayout
+            android:id="@+id/sheet_mode_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_mode_pill"
+            android:backgroundTint="@color/accent_warm_xlight"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+            <View
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_play_btn_warm"
+                android:backgroundTint="@color/accent_warm" />
+            <TextView
+                android:id="@+id/sheet_mode_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_grotesk"
+                android:letterSpacing="0.06"
+                android:text="BIT-PERFECT"
+                android:textColor="@color/accent_warm"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Node Flow Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="@color/canvas_bg"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="8dp">
+
+            <!-- Connector line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="22dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/bg_mode_pill"
+                android:backgroundTint="@color/outline_soft" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- SOURCE → warm orange -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_signal_node" android:backgroundTint="@color/accent_warm_xlight" android:elevation="3dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_folder" app:tint="@color/accent_warm" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="SOURCE" android:textColor="@color/accent_warm" android:textSize="8sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- DECODER → violet/lavender -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_signal_node_active" android:backgroundTint="@color/accent_lavender_xlight" android:elevation="3dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_manage" app:tint="@color/accent_lavender" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="DECODER" android:textColor="@color/accent_lavender" android:textSize="8sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- DSP → mint (visible only in DSP mode) -->
+                <LinearLayout android:id="@+id/sheet_node_dsp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_signal_node_active" android:backgroundTint="@color/accent_mint_xlight" android:elevation="3dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_manage" app:tint="@color/accent_mint_dark" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="DSP" android:textColor="@color/accent_mint" android:textSize="8sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- OUTPUT → amber -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_signal_node_active" android:backgroundTint="@color/accent_amber_xlight" android:elevation="3dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_audiotrack" app:tint="@color/accent_amber_dark" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="OUTPUT" android:textColor="@color/accent_amber_dark" android:textSize="8sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- DAC → mint -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_signal_node_active" android:backgroundTint="@color/accent_mint_xlight" android:elevation="3dp">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_nav_playing" app:tint="@color/accent_mint_dark" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="DAC" android:textColor="@color/accent_mint" android:textSize="8sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Format Details: 3 cards -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <!-- FORMAT → warm orange accent -->
+        <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="5dp" app:cardBackgroundColor="@color/accent_warm_xlight" app:cardCornerRadius="14dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="FORMAT" android:textColor="@color/accent_warm" android:textSize="9sp" android:textStyle="bold" />
+                <TextView android:id="@+id/sheet_format" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:fontFamily="@font/inter" android:text="—" android:textColor="@color/accent_warm_dark" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SAMPLE RATE → lavender accent -->
+        <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginHorizontal="5dp" app:cardBackgroundColor="@color/accent_lavender_xlight" app:cardCornerRadius="14dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="SAMPLE RATE" android:textColor="@color/accent_lavender" android:textSize="9sp" android:textStyle="bold" />
+                <TextView android:id="@+id/sheet_sample_rate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:fontFamily="@font/inter" android:text="—" android:textColor="@color/accent_lavender_dark" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- BIT DEPTH → amber accent -->
+        <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" app:cardBackgroundColor="@color/accent_amber_xlight" app:cardCornerRadius="14dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="BIT DEPTH" android:textColor="@color/accent_amber_dark" android:textSize="9sp" android:textStyle="bold" />
+                <TextView android:id="@+id/sheet_bit_depth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:fontFamily="@font/inter" android:text="—" android:textColor="@color/accent_warm_dark" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- Output Status -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/canvas_bg"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="14dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.05" android:text="OUTPUT STATUS" android:textColor="@color/outline_dark" android:textSize="9sp" android:textStyle="bold" />
+                <TextView android:id="@+id/sheet_output_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:fontFamily="@font/inter" android:text="—" android:textColor="@color/accent_mint_dark" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/sheet_status_badge" android:layout_width="wrap_content" android:layout_height="28dp" android:background="@drawable/bg_mode_pill" android:backgroundTint="@color/accent_mint_xlight" android:gravity="center" android:orientation="horizontal" android:paddingHorizontal="10dp">
+                <TextView android:id="@+id/sheet_status_badge_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/space_grotesk" android:letterSpacing="0.06" android:text="MATCHED" android:textColor="@color/accent_mint_dark" android:textSize="9sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

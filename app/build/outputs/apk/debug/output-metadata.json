@@ -8,14 +8,58 @@
   "variantName": "debug",
   "elements": [
     {
-      "type": "SINGLE",
-      "filters": [],
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "app-debug.apk"
+      "outputFile": "Sona-armeabi-v7a-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0",
+      "outputFile": "Sona-x86_64-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0",
+      "outputFile": "Sona-arm64-v8a-debug.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0",
+      "outputFile": "Sona-x86-debug.apk"
     }
   ],
   "elementType": "File",
-  "minSdkVersionForDexing": 29
+  "minSdkVersionForDexing": 24
 }

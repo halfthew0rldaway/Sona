@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/bleu/uapp_wannabe/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/bleu/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/bleu/uapp_wannabe/app/.cxx/Debug/58251s60/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/bleu/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/bleu/uapp_wannabe/app/.cxx/Debug/58251s60/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "usb-audio-poc::@6890427a1f51a3e7e1df": {
+      "artifactName": "usb-audio-poc",
+      "abi": "x86",
+      "output": "/home/bleu/uapp_wannabe/app/build/intermediates/cxx/Debug/58251s60/obj/x86/libusb-audio-poc.so",
+      "runtimeFiles": []
+    }
+  }
+}

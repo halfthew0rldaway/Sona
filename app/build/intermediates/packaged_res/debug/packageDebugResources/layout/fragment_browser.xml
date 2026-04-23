@@ -1,543 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:clipToPadding="false"
-    android:fillViewport="true">
+    android:background="@color/canvas_bg"
+    android:orientation="vertical">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="24dp">
+        android:paddingHorizontal="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.14"
-                android:text="ROOT"
-                android:textColor="@color/outline"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:text="›"
-                android:textColor="@color/outline_variant"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.14"
-                android:text="HIGH_RES_ARCHIVE"
-                android:textColor="@color/outline"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:text="›"
-                android:textColor="@color/outline_variant"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.14"
-                android:text="STUDIO_MASTERS"
-                android:textColor="@color/primary_container"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/inter"
-            android:letterSpacing="-0.03"
-            android:text="Digital Archive"
-            android:textColor="@color/on_surface"
-            android:textSize="42sp"
-            android:textStyle="bold" />
-
+        <!-- Title row + view toggles -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_panel_slot"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="18dp">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@android:drawable/ic_menu_search"
-                    app:tint="@color/outline" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:text="Filter library..."
-                    android:textColor="@color/outline"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <FrameLayout
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="12dp"
-                android:background="@drawable/bg_circle_surface">
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_manage"
-                    app:tint="@color/on_surface_variant" />
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_panel_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="20dp">
-
-            <FrameLayout
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:background="@drawable/bg_circle_surface">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_folder"
-                    app:tint="@color/secondary" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_grotesk"
-                    android:letterSpacing="0.12"
-                    android:text="FORMAT"
-                    android:textColor="@color/outline"
-                    android:textSize="10sp"
+                    android:fontFamily="@font/inter"
+                    android:letterSpacing="-0.02"
+                    android:text="The Library"
+                    android:textColor="@color/accent_warm"
+                    android:textSize="36sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/queue_summary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/inter"
-                    android:text="PCM / WAV"
-                    android:textColor="@color/on_surface"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:text="Explore your carefully curated audio collection."
+                    android:textColor="@color/text_secondary_soft"
+                    android:textSize="14sp" />
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/bg_panel_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="20dp">
+            <!-- View Mode toggles -->
+            <ImageButton
+                android:id="@+id/btn_view_list"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_mode_pill"
+                android:backgroundTint="@color/card_bg"
+                android:elevation="4dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_view_list"
+                android:scaleType="fitCenter"
+                app:tint="@color/accent_warm" />
 
-            <FrameLayout
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:background="@drawable/bg_circle_surface">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_manage"
-                    app:tint="@color/primary_container" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_grotesk"
-                    android:letterSpacing="0.12"
-                    android:text="SAMPLE RATE"
-                    android:textColor="@color/outline"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/inter"
-                    android:text="192kHz / 24-bit"
-                    android:textColor="@color/on_surface"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/bg_panel_card"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="20dp">
-
-            <FrameLayout
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:background="@drawable/bg_circle_surface">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@android:drawable/ic_menu_sort_by_size"
-                    app:tint="@color/secondary" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_grotesk"
-                    android:letterSpacing="0.12"
-                    android:text="TOTAL SIZE"
-                    android:textColor="@color/outline"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/inter"
-                    android:text="4.2 GB"
-                    android:textColor="@color/on_surface"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_select_manual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_primary_button"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingHorizontal="22dp"
-            android:paddingVertical="18dp">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_folder"
-                app:tint="@color/on_primary" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_grotesk"
-                    android:letterSpacing="0.08"
-                    android:text="IMPORT WAV MASTER"
-                    android:textColor="@color/on_primary"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Open the Android document picker and choose a WAV file."
-                    android:textColor="@color/on_primary"
-                    android:textSize="13sp" />
-            </LinearLayout>
+            <ImageButton
+                android:id="@+id/btn_view_grid"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/ic_view_grid"
+                android:scaleType="fitCenter"
+                app:tint="@color/text_secondary_soft" />
         </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/space_grotesk"
-            android:letterSpacing="0.18"
-            android:text="CURRENT SELECTION"
-            android:textColor="@color/outline"
-            android:textSize="10sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:id="@+id/selected_file_card"
+            android:id="@+id/folder_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/bg_route_card_active"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="18dp">
+            android:ellipsize="middle"
+            android:fontFamily="@font/jetbrains_mono"
+            android:maxLines="1"
+            android:textColor="@color/text_secondary_soft"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
 
-            <FrameLayout
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:background="@drawable/bg_circle_surface_active">
+    <!-- Action buttons row (FILE / FOLDER) as Bento grid -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_nav_playing"
-                    app:tint="@color/primary_container" />
-            </FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_select_file"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/accent_warm_light"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:backgroundTint="#80FFFFFF"
+                    android:layout_marginBottom="12dp">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_nav_playing"
+                        app:tint="@color/node_source" />
+                </FrameLayout>
 
                 <TextView
-                    android:id="@+id/selected_file_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_chip_secondary"
-                    android:fontFamily="@font/space_grotesk"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="4dp"
-                    android:text="WAITING FOR IMPORT"
-                    android:textColor="@color/on_secondary"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/selected_file_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/inter"
-                    android:text="No WAV master imported"
-                    android:textColor="@color/on_surface"
-                    android:textSize="24sp"
+                    android:text="Choose File"
+                    android:textColor="@color/node_source"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/selected_file_meta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Tap this panel or use the import action above to choose a WAV file."
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="14sp" />
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_panel_card"
-            android:orientation="vertical"
-            android:padding="22dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.12"
-                android:text="STORAGE INSIGHTS"
-                android:textColor="@color/secondary"
-                android:textSize="11sp"
-                android:textStyle="bold" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_select_folder"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/accent_mint_light"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:gravity="bottom"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_mode_pill"
+                    android:backgroundTint="#80FFFFFF"
+                    android:layout_marginBottom="12dp">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_folder"
+                        app:tint="@color/accent_mint_dark" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter"
-                        android:text="74%"
-                        android:textColor="@color/on_surface"
-                        android:textSize="46sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter"
-                        android:text="Capacity"
-                        android:textColor="@color/on_surface"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Library health: Optimal"
-                        android:textColor="@color/on_surface_variant"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="96dp"
-                    android:layout_height="92dp"
-                    android:gravity="bottom|end"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="18dp"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_panel_card_high" />
-
-                    <View
-                        android:layout_width="18dp"
-                        android:layout_height="78dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_panel_card_high" />
-
-                    <View
-                        android:layout_width="18dp"
-                        android:layout_height="54dp"
-                        android:background="@drawable/bg_panel_card_high" />
-                </LinearLayout>
+                    android:fontFamily="@font/inter"
+                    android:text="Open Folder"
+                    android:textColor="@color/accent_mint_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
-
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:progress="74"
-                app:indicatorColor="@color/primary_container"
-                app:trackColor="@color/surface_container_lowest"
-                app:trackCornerRadius="6dp"
-                app:trackThickness="10dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_panel_card"
-            android:orientation="vertical"
-            android:padding="22dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/space_grotesk"
-                android:letterSpacing="0.12"
-                android:text="QUICK LINK"
-                android:textColor="@color/outline"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="Import from NAS"
-                android:textColor="@color/on_surface"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="Verify checksums"
-                android:textColor="@color/on_surface"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="Re-index library"
-                android:textColor="@color/on_surface"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="All Tracks"
+            android:textColor="@color/text_primary_soft"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Loading indicator -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/loading_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/accent_warm"
+        app:trackColor="@color/outline_soft" />
+
+    <!-- Track list (visible state) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/track_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone" />
+
+    <!-- Empty state -->
+    <LinearLayout
+        android:id="@+id/empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="visible">
+
+        <!-- Category cards (shown as placeholder in empty state) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_nav_playing"
+                    app:tint="@color/accent_warm" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter"
+                    android:text="Pick a File or Folder to begin"
+                    android:textColor="@color/text_primary_soft"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_folder"
+                    app:tint="@color/accent_mint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter"
+                    android:text="Supports FLAC, WAV, MP3, AAC"
+                    android:textColor="@color/text_primary_soft"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_manage"
+                    app:tint="@color/accent_lavender" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter"
+                    android:text="Bit-Perfect and DSP modes"
+                    android:textColor="@color/text_primary_soft"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>

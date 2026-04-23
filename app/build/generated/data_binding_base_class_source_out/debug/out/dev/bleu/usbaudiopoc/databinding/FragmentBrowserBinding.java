@@ -4,13 +4,16 @@ package dev.bleu.usbaudiopoc.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import dev.bleu.usbaudiopoc.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -18,38 +21,55 @@ import java.lang.String;
 
 public final class FragmentBrowserBinding implements ViewBinding {
   @NonNull
-  private final NestedScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout btnSelectManual;
+  public final CardView btnSelectFile;
 
   @NonNull
-  public final LinearLayout selectedFileCard;
+  public final CardView btnSelectFolder;
 
   @NonNull
-  public final TextView selectedFileLabel;
+  public final ImageButton btnViewGrid;
 
   @NonNull
-  public final TextView selectedFileMeta;
+  public final ImageButton btnViewList;
 
   @NonNull
-  public final TextView selectedFileStatus;
+  public final LinearLayout emptyState;
 
-  private FragmentBrowserBinding(@NonNull NestedScrollView rootView,
-      @NonNull LinearLayout btnSelectManual, @NonNull LinearLayout selectedFileCard,
-      @NonNull TextView selectedFileLabel, @NonNull TextView selectedFileMeta,
-      @NonNull TextView selectedFileStatus) {
+  @NonNull
+  public final TextView folderNameLabel;
+
+  @NonNull
+  public final LinearProgressIndicator loadingIndicator;
+
+  @NonNull
+  public final TextView queueSummary;
+
+  @NonNull
+  public final RecyclerView trackList;
+
+  private FragmentBrowserBinding(@NonNull LinearLayout rootView, @NonNull CardView btnSelectFile,
+      @NonNull CardView btnSelectFolder, @NonNull ImageButton btnViewGrid,
+      @NonNull ImageButton btnViewList, @NonNull LinearLayout emptyState,
+      @NonNull TextView folderNameLabel, @NonNull LinearProgressIndicator loadingIndicator,
+      @NonNull TextView queueSummary, @NonNull RecyclerView trackList) {
     this.rootView = rootView;
-    this.btnSelectManual = btnSelectManual;
-    this.selectedFileCard = selectedFileCard;
-    this.selectedFileLabel = selectedFileLabel;
-    this.selectedFileMeta = selectedFileMeta;
-    this.selectedFileStatus = selectedFileStatus;
+    this.btnSelectFile = btnSelectFile;
+    this.btnSelectFolder = btnSelectFolder;
+    this.btnViewGrid = btnViewGrid;
+    this.btnViewList = btnViewList;
+    this.emptyState = emptyState;
+    this.folderNameLabel = folderNameLabel;
+    this.loadingIndicator = loadingIndicator;
+    this.queueSummary = queueSummary;
+    this.trackList = trackList;
   }
 
   @Override
   @NonNull
-  public NestedScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -74,38 +94,63 @@ public final class FragmentBrowserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_select_manual;
-      LinearLayout btnSelectManual = ViewBindings.findChildViewById(rootView, id);
-      if (btnSelectManual == null) {
+      id = R.id.btn_select_file;
+      CardView btnSelectFile = ViewBindings.findChildViewById(rootView, id);
+      if (btnSelectFile == null) {
         break missingId;
       }
 
-      id = R.id.selected_file_card;
-      LinearLayout selectedFileCard = ViewBindings.findChildViewById(rootView, id);
-      if (selectedFileCard == null) {
+      id = R.id.btn_select_folder;
+      CardView btnSelectFolder = ViewBindings.findChildViewById(rootView, id);
+      if (btnSelectFolder == null) {
         break missingId;
       }
 
-      id = R.id.selected_file_label;
-      TextView selectedFileLabel = ViewBindings.findChildViewById(rootView, id);
-      if (selectedFileLabel == null) {
+      id = R.id.btn_view_grid;
+      ImageButton btnViewGrid = ViewBindings.findChildViewById(rootView, id);
+      if (btnViewGrid == null) {
         break missingId;
       }
 
-      id = R.id.selected_file_meta;
-      TextView selectedFileMeta = ViewBindings.findChildViewById(rootView, id);
-      if (selectedFileMeta == null) {
+      id = R.id.btn_view_list;
+      ImageButton btnViewList = ViewBindings.findChildViewById(rootView, id);
+      if (btnViewList == null) {
         break missingId;
       }
 
-      id = R.id.selected_file_status;
-      TextView selectedFileStatus = ViewBindings.findChildViewById(rootView, id);
-      if (selectedFileStatus == null) {
+      id = R.id.empty_state;
+      LinearLayout emptyState = ViewBindings.findChildViewById(rootView, id);
+      if (emptyState == null) {
         break missingId;
       }
 
-      return new FragmentBrowserBinding((NestedScrollView) rootView, btnSelectManual,
-          selectedFileCard, selectedFileLabel, selectedFileMeta, selectedFileStatus);
+      id = R.id.folder_name_label;
+      TextView folderNameLabel = ViewBindings.findChildViewById(rootView, id);
+      if (folderNameLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.loading_indicator;
+      LinearProgressIndicator loadingIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (loadingIndicator == null) {
+        break missingId;
+      }
+
+      id = R.id.queue_summary;
+      TextView queueSummary = ViewBindings.findChildViewById(rootView, id);
+      if (queueSummary == null) {
+        break missingId;
+      }
+
+      id = R.id.track_list;
+      RecyclerView trackList = ViewBindings.findChildViewById(rootView, id);
+      if (trackList == null) {
+        break missingId;
+      }
+
+      return new FragmentBrowserBinding((LinearLayout) rootView, btnSelectFile, btnSelectFolder,
+          btnViewGrid, btnViewList, emptyState, folderNameLabel, loadingIndicator, queueSummary,
+          trackList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

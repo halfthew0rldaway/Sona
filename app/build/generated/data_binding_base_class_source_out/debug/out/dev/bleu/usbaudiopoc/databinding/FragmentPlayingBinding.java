@@ -4,15 +4,17 @@ package dev.bleu.usbaudiopoc.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.progressindicator.LinearProgressIndicator;
 import dev.bleu.usbaudiopoc.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,69 +22,245 @@ import java.lang.String;
 
 public final class FragmentPlayingBinding implements ViewBinding {
   @NonNull
-  private final NestedScrollView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView backendName;
+  public final FrameLayout albumArtFrame;
 
   @NonNull
   public final LinearLayout badgeBitPerfect;
 
   @NonNull
+  public final ImageView bgArtBlur;
+
+  @NonNull
+  public final LinearLayout btnAudioPath;
+
+  @NonNull
+  public final ImageButton btnNext;
+
+  @NonNull
   public final ImageButton btnPlayPause;
 
   @NonNull
+  public final ImageButton btnPrev;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-land/</li>
+   *   <li>layout-sw600dp/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
   public final ImageButton btnStop;
 
-  @NonNull
-  public final TextView currentPathPrimary;
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   *   <li>layout-sw600dp/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
+  public final LinearLayout controlsZone;
 
   @NonNull
-  public final TextView currentPathSecondary;
+  public final ImageView coverArt;
 
   @NonNull
-  public final TextView outputDevice;
+  public final LinearLayout coverPlaceholder;
 
   @NonNull
-  public final LinearProgressIndicator playbackProgress;
+  public final TextView dacName;
 
   @NonNull
-  public final TextView playbackStatusText;
+  public final TextView infoBuffer;
 
   @NonNull
-  public final TextView sourceFileValue;
+  public final TextView infoOutputDevice;
 
   @NonNull
-  public final TextView trackSubtitle;
+  public final TextView infoOutputFormat;
+
+  @NonNull
+  public final TextView infoSource;
+
+  @NonNull
+  public final LinearLayout modePillContainer;
+
+  @NonNull
+  public final View modePillDot;
+
+  @NonNull
+  public final TextView modePillText;
+
+  @NonNull
+  public final LinearLayout nodeDsp;
+
+  @NonNull
+  public final TextView outputLabel;
+
+  @NonNull
+  public final SeekBar progressBar;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   *   <li>layout-sw600dp/</li>
+   * </ul>
+   */
+  @Nullable
+  public final LinearLayout rightPanel;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout/</li>
+   *   <li>layout-sw600dp/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   */
+  @Nullable
+  public final LinearLayout seekZone;
+
+  @NonNull
+  public final View signalLineDspPre;
+
+  @NonNull
+  public final TextView signalPathLabel;
+
+  @NonNull
+  public final TextView statFormat;
+
+  @NonNull
+  public final TextView statOutput;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-land/</li>
+   *   <li>layout-sw600dp/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final TextView statQueue;
+
+  @NonNull
+  public final TextView statQueueDetail;
+
+  @NonNull
+  public final TextView statSampleRate;
+
+  @NonNull
+  public final TextView timeDuration;
+
+  @NonNull
+  public final TextView timeElapsed;
+
+  @NonNull
+  public final TextView trackArtist;
+
+  @NonNull
+  public final TextView trackStatus;
 
   @NonNull
   public final TextView trackTitle;
 
-  private FragmentPlayingBinding(@NonNull NestedScrollView rootView, @NonNull TextView backendName,
-      @NonNull LinearLayout badgeBitPerfect, @NonNull ImageButton btnPlayPause,
-      @NonNull ImageButton btnStop, @NonNull TextView currentPathPrimary,
-      @NonNull TextView currentPathSecondary, @NonNull TextView outputDevice,
-      @NonNull LinearProgressIndicator playbackProgress, @NonNull TextView playbackStatusText,
-      @NonNull TextView sourceFileValue, @NonNull TextView trackSubtitle,
+  private FragmentPlayingBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FrameLayout albumArtFrame, @NonNull LinearLayout badgeBitPerfect,
+      @NonNull ImageView bgArtBlur, @NonNull LinearLayout btnAudioPath,
+      @NonNull ImageButton btnNext, @NonNull ImageButton btnPlayPause, @NonNull ImageButton btnPrev,
+      @Nullable ImageButton btnStop, @Nullable LinearLayout controlsZone,
+      @NonNull ImageView coverArt, @NonNull LinearLayout coverPlaceholder,
+      @NonNull TextView dacName, @NonNull TextView infoBuffer, @NonNull TextView infoOutputDevice,
+      @NonNull TextView infoOutputFormat, @NonNull TextView infoSource,
+      @NonNull LinearLayout modePillContainer, @NonNull View modePillDot,
+      @NonNull TextView modePillText, @NonNull LinearLayout nodeDsp, @NonNull TextView outputLabel,
+      @NonNull SeekBar progressBar, @Nullable LinearLayout rightPanel,
+      @Nullable LinearLayout seekZone, @NonNull View signalLineDspPre,
+      @NonNull TextView signalPathLabel, @NonNull TextView statFormat, @NonNull TextView statOutput,
+      @Nullable TextView statQueue, @NonNull TextView statQueueDetail,
+      @NonNull TextView statSampleRate, @NonNull TextView timeDuration,
+      @NonNull TextView timeElapsed, @NonNull TextView trackArtist, @NonNull TextView trackStatus,
       @NonNull TextView trackTitle) {
     this.rootView = rootView;
-    this.backendName = backendName;
+    this.albumArtFrame = albumArtFrame;
     this.badgeBitPerfect = badgeBitPerfect;
+    this.bgArtBlur = bgArtBlur;
+    this.btnAudioPath = btnAudioPath;
+    this.btnNext = btnNext;
     this.btnPlayPause = btnPlayPause;
+    this.btnPrev = btnPrev;
     this.btnStop = btnStop;
-    this.currentPathPrimary = currentPathPrimary;
-    this.currentPathSecondary = currentPathSecondary;
-    this.outputDevice = outputDevice;
-    this.playbackProgress = playbackProgress;
-    this.playbackStatusText = playbackStatusText;
-    this.sourceFileValue = sourceFileValue;
-    this.trackSubtitle = trackSubtitle;
+    this.controlsZone = controlsZone;
+    this.coverArt = coverArt;
+    this.coverPlaceholder = coverPlaceholder;
+    this.dacName = dacName;
+    this.infoBuffer = infoBuffer;
+    this.infoOutputDevice = infoOutputDevice;
+    this.infoOutputFormat = infoOutputFormat;
+    this.infoSource = infoSource;
+    this.modePillContainer = modePillContainer;
+    this.modePillDot = modePillDot;
+    this.modePillText = modePillText;
+    this.nodeDsp = nodeDsp;
+    this.outputLabel = outputLabel;
+    this.progressBar = progressBar;
+    this.rightPanel = rightPanel;
+    this.seekZone = seekZone;
+    this.signalLineDspPre = signalLineDspPre;
+    this.signalPathLabel = signalPathLabel;
+    this.statFormat = statFormat;
+    this.statOutput = statOutput;
+    this.statQueue = statQueue;
+    this.statQueueDetail = statQueueDetail;
+    this.statSampleRate = statSampleRate;
+    this.timeDuration = timeDuration;
+    this.timeElapsed = timeElapsed;
+    this.trackArtist = trackArtist;
+    this.trackStatus = trackStatus;
     this.trackTitle = trackTitle;
   }
 
   @Override
   @NonNull
-  public NestedScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -107,9 +285,9 @@ public final class FragmentPlayingBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.backend_name;
-      TextView backendName = ViewBindings.findChildViewById(rootView, id);
-      if (backendName == null) {
+      id = R.id.album_art_frame;
+      FrameLayout albumArtFrame = ViewBindings.findChildViewById(rootView, id);
+      if (albumArtFrame == null) {
         break missingId;
       }
 
@@ -119,57 +297,186 @@ public final class FragmentPlayingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.bg_art_blur;
+      ImageView bgArtBlur = ViewBindings.findChildViewById(rootView, id);
+      if (bgArtBlur == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_audio_path;
+      LinearLayout btnAudioPath = ViewBindings.findChildViewById(rootView, id);
+      if (btnAudioPath == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_next;
+      ImageButton btnNext = ViewBindings.findChildViewById(rootView, id);
+      if (btnNext == null) {
+        break missingId;
+      }
+
       id = R.id.btn_play_pause;
       ImageButton btnPlayPause = ViewBindings.findChildViewById(rootView, id);
       if (btnPlayPause == null) {
         break missingId;
       }
 
+      id = R.id.btn_prev;
+      ImageButton btnPrev = ViewBindings.findChildViewById(rootView, id);
+      if (btnPrev == null) {
+        break missingId;
+      }
+
       id = R.id.btn_stop;
       ImageButton btnStop = ViewBindings.findChildViewById(rootView, id);
-      if (btnStop == null) {
+
+      id = R.id.controls_zone;
+      LinearLayout controlsZone = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.cover_art;
+      ImageView coverArt = ViewBindings.findChildViewById(rootView, id);
+      if (coverArt == null) {
         break missingId;
       }
 
-      id = R.id.current_path_primary;
-      TextView currentPathPrimary = ViewBindings.findChildViewById(rootView, id);
-      if (currentPathPrimary == null) {
+      id = R.id.cover_placeholder;
+      LinearLayout coverPlaceholder = ViewBindings.findChildViewById(rootView, id);
+      if (coverPlaceholder == null) {
         break missingId;
       }
 
-      id = R.id.current_path_secondary;
-      TextView currentPathSecondary = ViewBindings.findChildViewById(rootView, id);
-      if (currentPathSecondary == null) {
+      id = R.id.dac_name;
+      TextView dacName = ViewBindings.findChildViewById(rootView, id);
+      if (dacName == null) {
         break missingId;
       }
 
-      id = R.id.output_device;
-      TextView outputDevice = ViewBindings.findChildViewById(rootView, id);
-      if (outputDevice == null) {
+      id = R.id.info_buffer;
+      TextView infoBuffer = ViewBindings.findChildViewById(rootView, id);
+      if (infoBuffer == null) {
         break missingId;
       }
 
-      id = R.id.playback_progress;
-      LinearProgressIndicator playbackProgress = ViewBindings.findChildViewById(rootView, id);
-      if (playbackProgress == null) {
+      id = R.id.info_output_device;
+      TextView infoOutputDevice = ViewBindings.findChildViewById(rootView, id);
+      if (infoOutputDevice == null) {
         break missingId;
       }
 
-      id = R.id.playback_status_text;
-      TextView playbackStatusText = ViewBindings.findChildViewById(rootView, id);
-      if (playbackStatusText == null) {
+      id = R.id.info_output_format;
+      TextView infoOutputFormat = ViewBindings.findChildViewById(rootView, id);
+      if (infoOutputFormat == null) {
         break missingId;
       }
 
-      id = R.id.source_file_value;
-      TextView sourceFileValue = ViewBindings.findChildViewById(rootView, id);
-      if (sourceFileValue == null) {
+      id = R.id.info_source;
+      TextView infoSource = ViewBindings.findChildViewById(rootView, id);
+      if (infoSource == null) {
         break missingId;
       }
 
-      id = R.id.track_subtitle;
-      TextView trackSubtitle = ViewBindings.findChildViewById(rootView, id);
-      if (trackSubtitle == null) {
+      id = R.id.mode_pill_container;
+      LinearLayout modePillContainer = ViewBindings.findChildViewById(rootView, id);
+      if (modePillContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.mode_pill_dot;
+      View modePillDot = ViewBindings.findChildViewById(rootView, id);
+      if (modePillDot == null) {
+        break missingId;
+      }
+
+      id = R.id.mode_pill_text;
+      TextView modePillText = ViewBindings.findChildViewById(rootView, id);
+      if (modePillText == null) {
+        break missingId;
+      }
+
+      id = R.id.node_dsp;
+      LinearLayout nodeDsp = ViewBindings.findChildViewById(rootView, id);
+      if (nodeDsp == null) {
+        break missingId;
+      }
+
+      id = R.id.output_label;
+      TextView outputLabel = ViewBindings.findChildViewById(rootView, id);
+      if (outputLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.progress_bar;
+      SeekBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.right_panel;
+      LinearLayout rightPanel = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.seek_zone;
+      LinearLayout seekZone = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.signal_line_dsp_pre;
+      View signalLineDspPre = ViewBindings.findChildViewById(rootView, id);
+      if (signalLineDspPre == null) {
+        break missingId;
+      }
+
+      id = R.id.signal_path_label;
+      TextView signalPathLabel = ViewBindings.findChildViewById(rootView, id);
+      if (signalPathLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.stat_format;
+      TextView statFormat = ViewBindings.findChildViewById(rootView, id);
+      if (statFormat == null) {
+        break missingId;
+      }
+
+      id = R.id.stat_output;
+      TextView statOutput = ViewBindings.findChildViewById(rootView, id);
+      if (statOutput == null) {
+        break missingId;
+      }
+
+      id = R.id.stat_queue;
+      TextView statQueue = ViewBindings.findChildViewById(rootView, id);
+
+      id = R.id.stat_queue_detail;
+      TextView statQueueDetail = ViewBindings.findChildViewById(rootView, id);
+      if (statQueueDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.stat_sample_rate;
+      TextView statSampleRate = ViewBindings.findChildViewById(rootView, id);
+      if (statSampleRate == null) {
+        break missingId;
+      }
+
+      id = R.id.time_duration;
+      TextView timeDuration = ViewBindings.findChildViewById(rootView, id);
+      if (timeDuration == null) {
+        break missingId;
+      }
+
+      id = R.id.time_elapsed;
+      TextView timeElapsed = ViewBindings.findChildViewById(rootView, id);
+      if (timeElapsed == null) {
+        break missingId;
+      }
+
+      id = R.id.track_artist;
+      TextView trackArtist = ViewBindings.findChildViewById(rootView, id);
+      if (trackArtist == null) {
+        break missingId;
+      }
+
+      id = R.id.track_status;
+      TextView trackStatus = ViewBindings.findChildViewById(rootView, id);
+      if (trackStatus == null) {
         break missingId;
       }
 
@@ -179,9 +486,13 @@ public final class FragmentPlayingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentPlayingBinding((NestedScrollView) rootView, backendName, badgeBitPerfect,
-          btnPlayPause, btnStop, currentPathPrimary, currentPathSecondary, outputDevice,
-          playbackProgress, playbackStatusText, sourceFileValue, trackSubtitle, trackTitle);
+      return new FragmentPlayingBinding((ConstraintLayout) rootView, albumArtFrame, badgeBitPerfect,
+          bgArtBlur, btnAudioPath, btnNext, btnPlayPause, btnPrev, btnStop, controlsZone, coverArt,
+          coverPlaceholder, dacName, infoBuffer, infoOutputDevice, infoOutputFormat, infoSource,
+          modePillContainer, modePillDot, modePillText, nodeDsp, outputLabel, progressBar,
+          rightPanel, seekZone, signalLineDspPre, signalPathLabel, statFormat, statOutput,
+          statQueue, statQueueDetail, statSampleRate, timeDuration, timeElapsed, trackArtist,
+          trackStatus, trackTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

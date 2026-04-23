@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ── Reference design color system (clay/soft-UI extraction) ── -->
+    <!-- Primary: warm orange -->
+    <color name="ref_primary">#FFD9662B</color>
+    <color name="ref_on_primary">#FFFFFFFF</color>
+    <color name="ref_primary_container">#FFFFB38A</color>
+    <color name="ref_on_primary_container">#FF8A3D15</color>
+    <color name="ref_primary_fixed">#FFFFCCA6</color>
+    <color name="ref_primary_fixed_dim">#FFFFA775</color>
+
+    <!-- Secondary: mint/green -->
+    <color name="ref_secondary">#FF00B386</color>
+    <color name="ref_on_secondary">#FFFFFFFF</color>
+    <color name="ref_secondary_container">#FF7CF0C8</color>
+    <color name="ref_on_secondary_container">#FF005941</color>
+
+    <!-- Tertiary: lavender/purple -->
+    <color name="ref_tertiary">#FF7B5CF0</color>
+    <color name="ref_tertiary_container">#FFB8A8FF</color>
+    <color name="ref_on_tertiary_container">#FF331499</color>
+
+    <!-- Surface family (warm white) -->
+    <color name="ref_surface">#FFFDFCFB</color>
+    <color name="ref_surface_container_low">#FFF7F5F2</color>
+    <color name="ref_surface_container">#FFF2EEE9</color>
+    <color name="ref_surface_container_high">#FFEBE6DF</color>
+    <color name="ref_surface_container_highest">#FFE3DCD5</color>
+    <color name="ref_surface_variant">#FFE0DCD9</color>
+    <color name="ref_surface_dim">#FFDED9D3</color>
+
+    <!-- On-surface text -->
+    <color name="ref_on_surface">#FF1F1A17</color>
+    <color name="ref_on_surface_variant">#FF54473F</color>
+    <color name="ref_outline">#FF8A7A70</color>
+    <color name="ref_outline_variant">#FFD6C9C1</color>
+
+    <!-- Error -->
+    <color name="ref_error">#FFBA1A1A</color>
+    <color name="ref_error_container">#FFFFDAD6</color>
+    <color name="ref_on_error_container">#FF93000A</color>
+
+    <!-- Transparent helpers -->
+    <color name="ref_primary_container_30">#4DFFB38A</color>
+    <color name="ref_surface_80">#CCFDFCFB</color>
+</resources>

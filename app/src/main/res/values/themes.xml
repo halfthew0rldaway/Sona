@@ -1,42 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.UsbAudioPoc" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Main colors -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorOnPrimary">@color/on_primary</item>
-        <item name="colorPrimaryContainer">@color/primary_container</item>
-        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
 
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorOnSecondary">@color/on_secondary</item>
-        <item name="colorSecondaryContainer">@color/secondary_container</item>
-        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+    <style name="Theme.UsbAudioPoc" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary (warm orange) -->
+        <item name="colorPrimary">@color/accent_warm</item>
+        <item name="colorOnPrimary">@color/text_on_vibrant</item>
+        <item name="colorPrimaryContainer">@color/accent_warm_xlight</item>
+        <item name="colorOnPrimaryContainer">@color/accent_warm_dark</item>
 
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorOnSurface">@color/on_surface</item>
-        <item name="colorSurfaceVariant">@color/surface_variant</item>
-        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <!-- Secondary (violet) -->
+        <item name="colorSecondary">@color/accent_lavender</item>
+        <item name="colorOnSecondary">@color/text_on_vibrant</item>
+        <item name="colorSecondaryContainer">@color/accent_lavender_xlight</item>
+        <item name="colorOnSecondaryContainer">@color/accent_lavender_dark</item>
 
-        <item name="colorError">@color/error</item>
-        <item name="colorOnError">@color/on_error</item>
-        <item name="colorErrorContainer">@color/error_container</item>
-        <item name="colorOnErrorContainer">@color/on_error_container</item>
+        <!-- Tertiary (mint) -->
+        <item name="colorTertiary">@color/accent_mint</item>
+        <item name="colorOnTertiary">@color/text_on_vibrant</item>
+        <item name="colorTertiaryContainer">@color/accent_mint_xlight</item>
+        <item name="colorOnTertiaryContainer">@color/accent_mint_dark</item>
 
-        <item name="colorOutline">@color/outline</item>
-        <item name="colorOutlineVariant">@color/outline_variant</item>
+        <!-- Surface -->
+        <item name="colorSurface">@color/canvas_bg</item>
+        <item name="colorOnSurface">@color/text_primary_soft</item>
+        <item name="colorSurfaceVariant">@color/card_inset</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_soft</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/accent_coral</item>
+        <item name="colorOnError">@color/text_on_vibrant</item>
+        <item name="colorErrorContainer">@color/accent_coral_light</item>
+        <item name="colorOnErrorContainer">@color/accent_coral</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">@color/outline_dark</item>
+        <item name="colorOutlineVariant">@color/outline_soft</item>
 
         <!-- Typography -->
         <item name="fontFamily">@font/inter</item>
         <item name="android:fontFamily">@font/inter</item>
 
-        <!-- Status bar and navigation bar -->
-        <item name="android:statusBarColor">@color/surface</item>
-        <item name="android:navigationBarColor">@color/surface</item>
-        <item name="android:windowBackground">@color/surface</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <!-- System bars: light theme (dark icons on cream bg) -->
+        <item name="android:statusBarColor">@color/canvas_bg</item>
+        <item name="android:navigationBarColor">@color/canvas_bg</item>
+        <item name="android:windowBackground">@color/canvas_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
-    <!-- Custom text styles -->
+    <!-- Bottom nav active indicator: warm xlight pill -->
+    <style name="Widget.BottomNav.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bottom_nav_indicator</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+        <item name="android:height">36dp</item>
+        <item name="android:width">56dp</item>
+    </style>
+
+    <!-- Typography scale -->
     <style name="TextAppearance.Sonic.Display" parent="TextAppearance.Material3.DisplayMedium">
         <item name="fontFamily">@font/inter</item>
         <item name="android:fontFamily">@font/inter</item>
@@ -44,10 +64,17 @@
         <item name="android:letterSpacing">-0.02</item>
     </style>
 
+    <style name="TextAppearance.Sonic.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
     <style name="TextAppearance.Sonic.Technical" parent="TextAppearance.Material3.LabelMedium">
         <item name="fontFamily">@font/space_grotesk</item>
         <item name="android:fontFamily">@font/space_grotesk</item>
-        <item name="android:letterSpacing">0.1</item>
+        <item name="android:letterSpacing">0.08</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
@@ -60,6 +87,12 @@
         <item name="fontFamily">@font/space_grotesk</item>
         <item name="android:fontFamily">@font/space_grotesk</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:letterSpacing">0.08</item>
+        <item name="android:letterSpacing">0.06</item>
     </style>
+
+    <!-- Route card shapes -->
+    <style name="ShapeAppearance.Sonic.Card" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">20dp</item>
+    </style>
+
 </resources>

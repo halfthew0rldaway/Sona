@@ -5,20 +5,15 @@ plugins {
 
 android {
     namespace = "dev.bleu.usbaudiopoc"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.bleu.usbaudiopoc"
-        minSdk = 29
-        targetSdk = 34
+        minSdk = 24
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
-        externalNativeBuild {
-            cmake {
-                cppFlags += listOf("-std=c++20", "-Wall", "-Wextra")
-            }
-        }
+        setProperty("archivesBaseName", "Sona")
     }
 
     buildTypes {
@@ -28,10 +23,21 @@ android {
             }
         }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             ndk {
                 debugSymbolLevel = "SYMBOL_TABLE"
             }
+        }
+    }
+
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+            isUniversalApk = false
         }
     }
 
@@ -47,13 +53,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
-        }
-    }
 }
 
 dependencies {
@@ -66,4 +65,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.2")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.2")
+    implementation("androidx.documentfile:documentfile:1.0.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.media:media:1.7.0")
 }

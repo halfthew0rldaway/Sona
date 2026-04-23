@@ -1,22 +1,38 @@
 [
     {
-        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/activity_main.xml",
-        "source": "dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/fragment_engine.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/fragment_engine.xml"
     },
     {
-        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_engine.xml",
-        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_engine.xml"
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/nav_header.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/nav_header.xml"
     },
     {
-        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/activity_main.xml",
-        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/activity_main.xml"
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/fragment_playing.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/fragment_playing.xml"
     },
     {
-        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_browser.xml",
-        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_browser.xml"
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/fragment_browser.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/fragment_browser.xml"
     },
     {
-        "merged": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-mergeDebugResources-46:/layout/fragment_playing.xml",
-        "source": "/home/bleu/.gradle/daemon/8.7/dev.bleu.usbaudiopoc.app-main-49:/layout/fragment_playing.xml"
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/bottom_sheet_eq.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/bottom_sheet_eq.xml"
+    },
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/bottom_sheet_audio_path.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/bottom_sheet_audio_path.xml"
+    },
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/item_track.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/item_track.xml"
+    },
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "dev.bleu.usbaudiopoc.app-mergeDebugResources-48:/layout/item_track_grid.xml",
+        "source": "dev.bleu.usbaudiopoc.app-main-51:/layout/item_track_grid.xml"
     }
 ]

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soft Audio - DSP Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#d1d5db",
+                    "on-tertiary-fixed-variant": "#047857",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#be123c",
+                    "surface": "#f8fafc",
+                    "on-tertiary-container": "#064e3b",
+                    "inverse-primary": "#fda4af",
+                    "tertiary-fixed": "#a7f3d0",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f1f5f9",
+                    "on-primary-fixed": "#4c0519",
+                    "surface-container": "#e2e8f0",
+                    "secondary-container": "#bae6fd",
+                    "surface-container-high": "#cbd5e1",
+                    "surface-tint": "#f43f5e",
+                    "on-background": "#0f172a",
+                    "tertiary-container": "#a7f3d0",
+                    "primary-fixed": "#ffe4e6",
+                    "surface-bright": "#ffffff",
+                    "on-secondary-fixed-variant": "#0369a1",
+                    "secondary-fixed-dim": "#7dd3fc",
+                    "outline-variant": "#94a3b8",
+                    "secondary": "#0ea5e9",
+                    "on-tertiary-fixed": "#022c22",
+                    "on-primary-container": "#881337",
+                    "on-secondary-container": "#082f49",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e0f2fe",
+                    "on-surface-variant": "#334155",
+                    "outline": "#64748b",
+                    "inverse-on-surface": "#f8fafc",
+                    "background": "#f8fafc",
+                    "primary-container": "#fecdd3",
+                    "on-surface": "#0f172a",
+                    "inverse-surface": "#1e293b",
+                    "primary": "#f43f5e",
+                    "surface-dim": "#cbd5e1",
+                    "on-secondary-fixed": "#082f49",
+                    "tertiary": "#10b981",
+                    "error-container": "#ffe4e6",
+                    "surface-container-highest": "#94a3b8",
+                    "error": "#e11d48",
+                    "primary-fixed-dim": "#fecdd3",
+                    "on-error-container": "#881337",
+                    "tertiary-fixed-dim": "#6ee7b7",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "md": "24px",
+                    "margin": "32px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "button": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Claymorphism Utility Classes */
+        .clay-card {
+            background: theme('colors.surface-container-lowest');
+            box-shadow: 
+                25px 25px 50px rgba(0, 0, 0, 0.08),
+                -12px -12px 25px rgba(255, 255, 255, 0.95),
+                inset 3px 3px 6px rgba(255, 255, 255, 1),
+                inset -3px -3px 6px rgba(0, 0, 0, 0.03);
+            border-radius: 2rem;
+        }
+        
+        .clay-btn {
+            background: theme('colors.primary-container');
+            box-shadow: 
+                10px 10px 20px rgba(0, 0, 0, 0.1),
+                -5px -5px 15px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+        
+        .clay-btn:active {
+            box-shadow: 
+                3px 3px 6px rgba(0, 0, 0, 0.06),
+                -2px -2px 5px rgba(255, 255, 255, 0.6),
+                inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+            transform: scale(0.98);
+        }
+
+        .clay-badge {
+            box-shadow: 
+                5px 5px 12px rgba(0, 0, 0, 0.06),
+                -3px -3px 8px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.6);
+        }
+
+        .clay-slider-track {
+            background: theme('colors.surface-container-high');
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.95);
+            border-radius: 999px;
+        }
+        
+        .clay-slider-thumb {
+            background: theme('colors.primary');
+            box-shadow: 
+                0px 5px 10px rgba(0, 0, 0, 0.18),
+                inset 3px 3px 6px rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen text-on-background font-body-md pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-rose-50/80 backdrop-blur-md font-['Plus_Jakarta_Sans'] font-bold text-slate-800 docked full-width rounded-b-[2rem] shadow-[0_10px_30px_-15px_rgba(254,205,211,0.5)] shadow-xl shadow-rose-200/50">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-white clay-badge flex items-center justify-center">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling young woman with natural makeup and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFo7kC-HQfsCq-KV6hKq8JfdFuxZNEE5BViwOsaRVqAUBYA8_B6aPfmZTGQorE-1bY7yXTFycqARIOi6r146iqrvXZSDTD6dxfgdCdivr3gjaJDcmd9VUiYrecvFrCsPjVkUw6TKe39Ezz-7sZl9H_XkMHC71aVn6UY5MdjND19xq9neEbKfT05nV4w7n1yXJWD8NLFoOTNBezuw0vNs2vEHTgQVW6Vo76-GGviOUybszCyLxMi2zQJUgJy_UzoVf6WWgffmQqPyc"/>
+</div>
+<div class="text-xl font-black tracking-tighter text-rose-500">SOFT_AUDIO</div>
+<div class="w-10 h-10 flex items-center justify-center text-rose-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</div>
+</header>
+<main class="pt-[100px] px-6 max-w-lg mx-auto flex flex-col gap-6">
+<!-- DSP Mode Indicator -->
+<div class="flex justify-center">
+<div class="bg-tertiary-container text-on-tertiary-container px-6 py-2 rounded-full font-label-caps tracking-widest clay-badge flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                DSP MODE ACTIVE
+            </div>
+</div>
+<!-- Album Art Card -->
+<div class="clay-card p-6 flex flex-col items-center">
+<div class="w-64 h-64 rounded-[2rem] overflow-hidden mb-6 shadow-xl shadow-tertiary-container/50 relative">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="Abstract colorful 3D shapes floating in a soft pastel environment with dreamy lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYQbfKew8kdKew1PvDPSY8CekPcbZPW__PrAKovTyq6FFuE58Ffo_NEdJJWSEOlMcvmIWLLn-yYZ1JNEcJA69U8hR_iNpIcsFucMZIwHNUdmYHfxS36bmZfARTIYHTrEVHCsURmdaquwuGjxfeuMK6fmDQMOhlP-ivgR4CirML-9SgL2dyqGwqmAA_6Jx-GZyfAJGht9NYKSHhcgfBqvah98qGxj8mJuGQeprgiW4sI0mRLWM7ziOaXleBca7ylVBCEARFMA_VbnM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<h2 class="font-h2 text-on-surface text-center mb-1">Synthetica</h2>
+<p class="font-body-lg text-on-surface-variant text-center mb-4">The Midnight Echos</p>
+<!-- Progress Bar -->
+<div class="w-full flex items-center gap-4 mb-2">
+<span class="text-xs font-semibold text-on-surface-variant">1:24</span>
+<div class="flex-1 h-3 clay-slider-track relative">
+<div class="absolute left-0 top-0 bottom-0 w-1/3 bg-tertiary rounded-full opacity-80"></div>
+<div class="absolute left-1/3 top-1/2 -translate-y-1/2 -ml-2 w-5 h-5 clay-slider-thumb"></div>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant">4:12</span>
+</div>
+</div>
+<!-- Audio Path Visualizer -->
+<div class="clay-card p-5">
+<h3 class="font-label-caps text-on-surface-variant mb-4 text-center">SIGNAL PATH</h3>
+<div class="flex items-center justify-between px-2">
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center clay-badge text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">phone_iphone</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">FLAC</span>
+</div>
+<div class="h-[2px] flex-1 bg-surface-variant mx-1 rounded-full relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-tertiary w-full opacity-30"></div>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center clay-badge shadow-[0_0_15px_rgba(186,230,253,0.6)] border-2 border-white/50">
+<span class="material-symbols-outlined text-lg">tune</span>
+</div>
+<span class="text-[10px] font-bold text-secondary">DSP</span>
+</div>
+<div class="h-[2px] flex-1 bg-surface-variant mx-1 rounded-full relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-tertiary w-full opacity-30"></div>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center clay-badge text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">headphones</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">DAC</span>
+</div>
+</div>
+</div>
+<!-- DSP Controls -->
+<div class="grid grid-cols-2 gap-4">
+<div class="clay-card p-4 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-tertiary mb-2">graphic_eq</span>
+<span class="font-label-caps text-on-surface-variant mb-3">WARMTH</span>
+<div class="w-full h-12 clay-slider-track relative flex items-center px-1">
+<div class="w-2/3 h-10 bg-tertiary-container rounded-full opacity-80 flex justify-end items-center pr-1">
+<div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="clay-card p-4 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-secondary mb-2">spatial_audio</span>
+<span class="font-label-caps text-on-surface-variant mb-3">STAGE</span>
+<div class="w-full h-12 clay-slider-track relative flex items-center px-1">
+<div class="w-1/2 h-10 bg-secondary-container rounded-full opacity-80 flex justify-end items-center pr-1">
+<div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Output Info -->
+<div class="clay-card p-4 flex justify-between items-center bg-surface-container-low">
+<div>
+<p class="font-label-caps text-on-surface-variant">OUTPUT FORMAT</p>
+<p class="font-body-md font-bold text-on-surface">24-bit / 48kHz <span class="text-xs text-error font-normal bg-error-container px-2 py-0.5 rounded-md ml-2">Resampled</span></p>
+</div>
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center clay-badge">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4">
+<div class="bg-white/90 backdrop-blur-lg w-[90%] mx-auto rounded-[2rem] flex justify-around items-center px-2 py-2 shadow-2xl shadow-rose-200/40 tonal-shift shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),0_15px_30px_rgba(0,0,0,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-rose-500 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-2xl" style="font-variation-settings: 'FILL' 0;">library_music</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-rose-100 text-rose-600 rounded-[1.5rem] px-6 py-2 shadow-[inset_0_-2px_4px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,0.9)] Active: scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1 text-2xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Player</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-rose-500 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-2xl" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Gear</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-rose-500 transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1 text-2xl" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

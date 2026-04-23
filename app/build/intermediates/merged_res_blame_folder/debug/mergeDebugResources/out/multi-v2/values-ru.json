@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "dev.bleu.usbaudiopoc.app-mergeDebugResources-45:/values-ru/values-ru.xml",
+            "outputFile": "dev.bleu.usbaudiopoc.app-mergeDebugResources-47:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "/home/bleu/.gradle/caches/transforms-4/8e0a0bff2d388b6446750efdf4a5758f/transformed/core-1.13.1/res/values-ru/values-ru.xml",

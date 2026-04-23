@@ -17,6 +17,7 @@ import dev.bleu.usbaudiopoc.databinding.FragmentEngineBinding
 import dev.bleu.usbaudiopoc.player.PlayerViewModel
 import kotlinx.coroutines.launch
 import java.util.Locale
+import androidx.cardview.widget.CardView
 
 class FragmentEngine : Fragment() {
 
@@ -24,112 +25,141 @@ class FragmentEngine : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: PlayerViewModel by activityViewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentEngineBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRouteCards()
-        collectUiState()
-    }
+        binding.routeBitperfectCard.setOnClickListener { viewModel.setRouteOverrideSafe(AudioRouteOverride.BIT_PERFECT) }
+        binding.routeDspCard.setOnClickListener { viewModel.setRouteOverrideSafe(AudioRouteOverride.DSP) }
+        binding.btnGrantUsbAccess.setOnClickListener { viewModel.requestUsbPermission() }
 
-    private fun setupRouteCards() {
-        binding.routeAutoCard.setOnClickListener {
-            viewModel.setRouteOverride(AudioRouteOverride.AUTO)
+        binding.btnOpenEqModal.setOnClickListener {
+            EqBottomSheet().show(parentFragmentManager, EqBottomSheet.TAG)
         }
-        binding.routeUsbCard.setOnClickListener {
-            viewModel.setRouteOverride(AudioRouteOverride.USB_ONLY)
-        }
-        binding.routeAndroidCard.setOnClickListener {
-            viewModel.setRouteOverride(AudioRouteOverride.ANDROID_ONLY)
-        }
+
+        collectUiState()
     }
 
     private fun collectUiState() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
-                    viewModel.playerState.collect { playerState ->
-                        val isUsb = playerState.activeBackend == "UsbAudioBackend"
-                        updateRouteSelection(playerState.routeOverride)
+                    viewModel.playerState.collect { state ->
+                        val isBitPerfect = state.routeOverride == AudioRouteOverride.BIT_PERFECT
+                        updateRouteSelection(state.routeOverride)
+
+                        binding.transitionSpinner.visibility = if (state.isTransitioning) View.VISIBLE else View.GONE
+
                         binding.bitPerfectStatusText.text = when {
-                            isUsb -> "BIT-PERFECT MODE ACTIVE"
-                            playerState.routeOverride == AudioRouteOverride.USB_ONLY -> "USB EXCLUSIVE MODE ARMED"
-                            playerState.routeOverride == AudioRouteOverride.ANDROID_ONLY -> "ANDROID MIXER PATH SELECTED"
-                            else -> "AUTO ROUTING ENABLED"
+                            isBitPerfect -> "BIT-PERFECT ACTIVE"
+                            else -> "DSP MODE ENABLED"
                         }
+
+                        binding.nodeDsp.visibility = if (isBitPerfect) View.GONE else View.VISIBLE
+                        binding.textDspHint.visibility = if (isBitPerfect) View.VISIBLE else View.GONE
+                        binding.eqSectionContainer.visibility = if (isBitPerfect) View.GONE else View.VISIBLE
+
+                        updateOutputInfoPanel(state)
                     }
                 }
                 launch {
                     viewModel.usbState.collect { usbState ->
                         val device = usbState.compatibleDevice
-                        binding.hardwareName.text = if (device != null) {
-                            device.productName ?: device.deviceName
-                        } else {
-                            "No DAC Connected"
+                        binding.hardwareName.text = device?.productName ?: device?.deviceName ?: "No DAC Connected"
+                        binding.hardwareStatusText.text = when {
+                            device == null -> "Connect a compatible USB DAC."
+                            viewModel.playerState.value.routeOverride == AudioRouteOverride.BIT_PERFECT -> "DAC Active — Exclusive Access"
+                            else -> "DAC Not Exclusive"
                         }
-                        binding.hardwareStatusText.text = if (device != null) {
-                            usbState.description
-                        } else {
-                            "Connect a compatible USB DAC to unlock direct playback."
-                        }
-                        binding.vendorId.text = device?.vendorId?.let(::formatHex) ?: "--"
-                        binding.productId.text = device?.productId?.let(::formatHex) ?: "--"
+                        binding.vendorId.text = device?.vendorId?.let { formatHex(it) } ?: "--"
+                        binding.productId.text = device?.productId?.let { formatHex(it) } ?: "--"
                         binding.hardwarePermissionStatus.text = when {
-                            device == null -> "WAITING FOR HARDWARE"
-                            usbState.hasPermission -> "PERMISSION GRANTED"
-                            else -> "PERMISSION REQUIRED"
+                            device == null -> "--"
+                            usbState.hasPermission -> "GRANTED"
+                            else -> "NEEDED"
                         }
+                        // Warm palette: granted = mint for positive feedback, needed = error
+                        binding.hardwarePermissionStatus.setTextColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                if (usbState.hasPermission) R.color.accent_mint_dark else R.color.error
+                            )
+                        )
+                        binding.btnGrantUsbAccess.visibility =
+                            if (device != null && !usbState.hasPermission) View.VISIBLE else View.GONE
                     }
                 }
             }
         }
     }
 
-    private fun updateRouteSelection(routeOverride: AudioRouteOverride) {
-        setRouteCardState(
-            selected = routeOverride == AudioRouteOverride.AUTO,
-            card = binding.routeAutoCard,
-            title = binding.routeAutoTitle,
-            indicator = binding.routeAutoIndicator,
-        )
-        setRouteCardState(
-            selected = routeOverride == AudioRouteOverride.USB_ONLY,
-            card = binding.routeUsbCard,
-            title = binding.routeUsbTitle,
-            indicator = binding.routeUsbIndicator,
-        )
-        setRouteCardState(
-            selected = routeOverride == AudioRouteOverride.ANDROID_ONLY,
-            card = binding.routeAndroidCard,
-            title = binding.routeAndroidTitle,
-            indicator = binding.routeAndroidIndicator,
-        )
+    private fun fmtMime(trackName: String, mimeType: String): String = when {
+        mimeType.contains("flac") -> "FLAC"
+        mimeType.contains("wav")  -> "WAV"
+        mimeType.contains("mp4") || mimeType.contains("aac") -> "AAC"
+        mimeType.contains("mpeg") -> "MP3"
+        mimeType.contains("alac") || trackName.endsWith(".alac", true) -> "ALAC"
+        trackName.endsWith(".dsf", true) || trackName.endsWith(".dff", true) -> "DSD"
+        else -> "PCM"
     }
 
-    private fun setRouteCardState(selected: Boolean, card: View, title: TextView, indicator: View) {
-        card.setBackgroundResource(if (selected) R.drawable.bg_route_card_active else R.drawable.bg_route_card)
-        indicator.setBackgroundResource(if (selected) R.drawable.bg_route_indicator_active else R.drawable.bg_route_indicator)
-        title.setTextColor(
+    private fun updateOutputInfoPanel(state: dev.bleu.usbaudiopoc.player.PlayerUiState) {
+        val fmt = fmtMime(state.currentTrack?.title ?: "", state.mimeType)
+        binding.textSourceInfo.text = "Source: $fmt | ${state.sampleRate} Hz / ${state.sourceBitDepth}-bit"
+
+        val outRate = state.outputSampleRate ?: state.sampleRate
+        binding.textOutputInfo.text = "Output: $outRate Hz"
+        binding.textModeInfo.text = if (state.routeOverride == AudioRouteOverride.BIT_PERFECT) "Mode: Bit-Perfect" else "Mode: DSP"
+
+        val isMatched = state.sampleRate > 0 && state.sampleRate == outRate
+        binding.textStatusMatch.text = if (isMatched) "Matched (No resample likely)" else "Mismatch (Resampling likely)"
+        binding.textStatusMatch.setTextColor(
             ContextCompat.getColor(
                 requireContext(),
-                if (selected) R.color.primary_container else R.color.on_surface,
+                if (isMatched) R.color.accent_mint_dark else R.color.accent_coral
             )
         )
     }
 
-    private fun formatHex(value: Int): String {
-        return String.format(Locale.US, "0x%04X", value)
+    private fun updateRouteSelection(route: AudioRouteOverride) {
+        applyCardState(
+            selected = route == AudioRouteOverride.BIT_PERFECT,
+            card     = binding.routeBitperfectCard,
+            title    = binding.routeBitperfectTitle,
+            indicator = binding.routeBitperfectIndicator
+        )
+        applyCardState(
+            selected = route == AudioRouteOverride.DSP,
+            card     = binding.routeDspCard,
+            title    = binding.routeDspTitle,
+            indicator = binding.routeDspIndicator
+        )
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun applyCardState(
+        selected: Boolean,
+        card: CardView,
+        title: TextView,
+        indicator: View
+    ) {
+        val ctx = requireContext()
+        card.setCardBackgroundColor(
+            ContextCompat.getColor(ctx, if (selected) R.color.card_active_bg else R.color.card_bg)
+        )
+        card.cardElevation = if (selected) 6f else 2f
+        indicator.background = ContextCompat.getDrawable(
+            ctx,
+            if (selected) R.drawable.bg_route_indicator_active else R.drawable.bg_route_indicator
+        )
+        title.setTextColor(
+            ContextCompat.getColor(ctx, if (selected) R.color.accent_warm else R.color.text_primary_soft)
+        )
     }
+
+    private fun formatHex(v: Int) = String.format(Locale.US, "0x%04X", v)
+
+    override fun onDestroyView() { super.onDestroyView(); _binding = null }
 }

@@ -5,14 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import dev.bleu.usbaudiopoc.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,38 +23,52 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
-
-  @NonNull
-  public final FrameLayout bottomNavShell;
+  private final DrawerLayout rootView;
 
   @NonNull
   public final BottomNavigationView bottomNavigation;
 
   @NonNull
+  public final FrameLayout bottomNavigationContainer;
+
+  @NonNull
+  public final DrawerLayout drawerLayout;
+
+  @NonNull
+  public final ImageView menuButton;
+
+  @NonNull
   public final FragmentContainerView navHostFragment;
 
   @NonNull
-  public final LinearLayout topBar;
+  public final NavigationView navigationView;
 
   @NonNull
-  public final View topBarScrim;
+  public final TextView statusBadge;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FrameLayout bottomNavShell, @NonNull BottomNavigationView bottomNavigation,
-      @NonNull FragmentContainerView navHostFragment, @NonNull LinearLayout topBar,
-      @NonNull View topBarScrim) {
+  @NonNull
+  public final LinearLayout topBarContainer;
+
+  private ActivityMainBinding(@NonNull DrawerLayout rootView,
+      @NonNull BottomNavigationView bottomNavigation,
+      @NonNull FrameLayout bottomNavigationContainer, @NonNull DrawerLayout drawerLayout,
+      @NonNull ImageView menuButton, @NonNull FragmentContainerView navHostFragment,
+      @NonNull NavigationView navigationView, @NonNull TextView statusBadge,
+      @NonNull LinearLayout topBarContainer) {
     this.rootView = rootView;
-    this.bottomNavShell = bottomNavShell;
     this.bottomNavigation = bottomNavigation;
+    this.bottomNavigationContainer = bottomNavigationContainer;
+    this.drawerLayout = drawerLayout;
+    this.menuButton = menuButton;
     this.navHostFragment = navHostFragment;
-    this.topBar = topBar;
-    this.topBarScrim = topBarScrim;
+    this.navigationView = navigationView;
+    this.statusBadge = statusBadge;
+    this.topBarContainer = topBarContainer;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public DrawerLayout getRoot() {
     return rootView;
   }
 
@@ -76,15 +93,23 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bottom_nav_shell;
-      FrameLayout bottomNavShell = ViewBindings.findChildViewById(rootView, id);
-      if (bottomNavShell == null) {
-        break missingId;
-      }
-
       id = R.id.bottom_navigation;
       BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigation == null) {
+        break missingId;
+      }
+
+      id = R.id.bottom_navigation_container;
+      FrameLayout bottomNavigationContainer = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigationContainer == null) {
+        break missingId;
+      }
+
+      DrawerLayout drawerLayout = (DrawerLayout) rootView;
+
+      id = R.id.menu_button;
+      ImageView menuButton = ViewBindings.findChildViewById(rootView, id);
+      if (menuButton == null) {
         break missingId;
       }
 
@@ -94,20 +119,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.top_bar;
-      LinearLayout topBar = ViewBindings.findChildViewById(rootView, id);
-      if (topBar == null) {
+      id = R.id.navigation_view;
+      NavigationView navigationView = ViewBindings.findChildViewById(rootView, id);
+      if (navigationView == null) {
         break missingId;
       }
 
-      id = R.id.top_bar_scrim;
-      View topBarScrim = ViewBindings.findChildViewById(rootView, id);
-      if (topBarScrim == null) {
+      id = R.id.status_badge;
+      TextView statusBadge = ViewBindings.findChildViewById(rootView, id);
+      if (statusBadge == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavShell, bottomNavigation,
-          navHostFragment, topBar, topBarScrim);
+      id = R.id.top_bar_container;
+      LinearLayout topBarContainer = ViewBindings.findChildViewById(rootView, id);
+      if (topBarContainer == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((DrawerLayout) rootView, bottomNavigation,
+          bottomNavigationContainer, drawerLayout, menuButton, navHostFragment, navigationView,
+          statusBadge, topBarContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

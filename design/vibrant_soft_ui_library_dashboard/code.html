@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soft UI / Claymorphism Library Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e3e2e0",
+                        "on-tertiary-fixed-variant": "#4a1c9e",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#8a3a00",
+                        "surface": "#faf9f6",
+                        "on-tertiary-container": "#2f0082",
+                        "inverse-primary": "#ffb685",
+                        "tertiary-fixed": "#c4a3ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f4f3f1",
+                        "on-primary-fixed": "#331200",
+                        "surface-container": "#efeeeb",
+                        "secondary-container": "#6ee3b6",
+                        "surface-container-high": "#e9e8e5",
+                        "surface-tint": "#e65c00",
+                        "on-background": "#1a1c1a",
+                        "tertiary-container": "#c4a3ff",
+                        "primary-fixed": "#ffaa6b",
+                        "surface-bright": "#faf9f6",
+                        "on-secondary-fixed-variant": "#005c3d",
+                        "secondary-fixed-dim": "#4bc496",
+                        "outline-variant": "#d3c4ba",
+                        "secondary": "#00a16e",
+                        "on-tertiary-fixed": "#1a004d",
+                        "on-primary-container": "#5e2600",
+                        "on-secondary-container": "#003823",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#6ee3b6",
+                        "on-surface-variant": "#4f453e",
+                        "outline": "#81756d",
+                        "inverse-on-surface": "#f2f1ee",
+                        "background": "#faf9f6",
+                        "primary-container": "#ffaa6b",
+                        "on-surface": "#1a1c1a",
+                        "inverse-surface": "#2f312f",
+                        "primary": "#e65c00",
+                        "surface-dim": "#dbdad7",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary": "#7833ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e0",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ff8c3a",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#a87dff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "md": "24px",
+                        "margin": "32px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "h1": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "h1": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "button": ["16px", { lineHeight: "1.0", fontWeight: "700" }],
+                        "h3": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "h2": ["32px", { lineHeight: "1.3", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen font-body-md overflow-x-hidden pb-32 pt-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-orange-50/80 backdrop-blur-md text-orange-500 font-['Plus_Jakarta_Sans'] font-bold text-slate-800 shadow-[0_10px_30px_-15px_rgba(255,170,107,0.6)] shadow-xl shadow-orange-300/50 rounded-b-[2rem]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container shadow-[inset_2px_2px_4px_#cc8856,inset_-2px_-2px_4px_#ffcc80]">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a young woman with soft natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuduXuX-lZNGaiduCPOTZFcoamKhjpp2usum3eEwey6IX0WZGa-bLw0kJ50m0V8Aa2bRTXigq-_niRzUiaCYDbmbbow94JPoC91Lb7sZi3CqJER9Al6dstCKcEuDlDLu8VjNgLka0JNLUXab75KZI-jwBNAQ1K9cjJvr_E_5LBSB87HVT-IUqXQ3ZEZFGwjokFaCTNMZv5T92fu2lpYMKIdqPC9dwEHghN4d97cpMEBb9vcZ9sEad0UQYYUaqeq_ujrHrqHCpabhg"/>
+</div>
+<span class="text-xl font-black tracking-tighter text-orange-500">SOFT_AUDIO</span>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-orange-600 font-bold hover:scale-105 transition-transform duration-300" href="#">Library</a>
+<a class="text-slate-400 hover:scale-105 transition-transform duration-300" href="#">Player</a>
+<a class="text-slate-400 hover:scale-105 transition-transform duration-300" href="#">Gear</a>
+<a class="text-slate-400 hover:scale-105 transition-transform duration-300" href="#">Profile</a>
+</nav>
+<button class="md:hidden text-orange-500 hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="container mx-auto px-6 max-w-5xl">
+<!-- Header -->
+<section class="mt-8 mb-12">
+<h1 class="font-h1 text-h1 text-primary">The Library</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Explore your carefully curated audio collection.</p>
+</section>
+<!-- Navigation Cards (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- Recently Added -->
+<button class="group flex flex-col items-center justify-center p-8 rounded-[2rem] bg-primary-container text-on-primary-container shadow-[12px_12px_24px_#d48d59,-12px_-12px_24px_#ffc77d,inset_2px_2px_4px_#ffd5aa,inset_-2px_-2px_4px_#cc8856] hover:shadow-[8px_8px_16px_#d48d59,-8px_-8px_16px_#ffc77d,inset_4px_4px_8px_#ffd5aa,inset_-4px_-4px_8px_#cc8856] hover:scale-[0.98] transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
+<div class="w-16 h-16 mb-4 rounded-full bg-white/50 flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-4xl filled">schedule</span>
+</div>
+<span class="font-button text-button">Recently Added</span>
+</button>
+<!-- Favorites -->
+<button class="group flex flex-col items-center justify-center p-8 rounded-[2rem] bg-secondary-container text-on-secondary-container shadow-[12px_12px_24px_#5cbd97,-12px_-12px_24px_#80ffd5,inset_2px_2px_4px_#9effd9,inset_-2px_-2px_4px_#58b591] hover:shadow-[8px_8px_16px_#5cbd97,-8px_-8px_16px_#80ffd5,inset_4px_4px_8px_#9effd9,inset_-4px_-4px_8px_#58b591] hover:scale-[0.98] transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
+<div class="w-16 h-16 mb-4 rounded-full bg-white/50 flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-4xl filled">favorite</span>
+</div>
+<span class="font-button text-button">Favorites</span>
+</button>
+<!-- Folders -->
+<button class="group flex flex-col items-center justify-center p-8 rounded-[2rem] bg-tertiary-container text-on-tertiary-container shadow-[12px_12px_24px_#a388d4,-12px_-12px_24px_#e5beff,inset_2px_2px_4px_#e5ccff,inset_-2px_-2px_4px_#9d82cc] hover:shadow-[8px_8px_16px_#a388d4,-8px_-8px_16px_#e5beff,inset_4px_4px_8px_#e5ccff,inset_-4px_-4px_8px_#9d82cc] hover:scale-[0.98] transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
+<div class="w-16 h-16 mb-4 rounded-full bg-white/50 flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-4xl filled">folder_open</span>
+</div>
+<span class="font-button text-button">Folders</span>
+</button>
+</section>
+<!-- Mixed Quality List -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-h3 text-h3 text-on-surface">All Tracks</h2>
+<button class="text-primary flex items-center gap-2 hover:opacity-80 transition-opacity">
+<span class="font-label-caps text-label-caps uppercase">Sort By</span>
+<span class="material-symbols-outlined">sort</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Track Card 1 -->
+<div class="flex items-center p-4 rounded-[1.5rem] bg-surface-container-highest shadow-[8px_8px_16px_#c1c0be,-8px_-8px_16px_#ffffff,inset_1px_1px_2px_#ffffff,inset_-1px_-1px_2px_#c1c0be] hover:shadow-[5px_5px_10px_#c1c0be,-5px_-5px_10px_#ffffff,inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_#c1c0be] hover:scale-[0.99] transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="w-16 h-16 rounded-xl bg-surface-variant overflow-hidden mr-4 flex-shrink-0 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="abstract fluid gradient art in warm orange and pink tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPelcVXlkPHMwSP4iTGOFt2HmvGoCJrpMwia0IzxWuuxUiCLyTZck4vxIng25RWn314kbm5aLYn9yDrF96XPQX4xr_XxHIMjx8uYjp4FQ46O6KZRMR61XEm8R_gEJv7XbqM1rbptm9za06u2OVlBl2Pdi0cd8mUWWPl77n-_rr4DNzEqIT8eMcadLGYmFjN5XDren70enR8FNLqCcb43Q768F5WS0nuj0NKPv_Bhlf-ilmPfoCBTDq_ZoF07XSKG859XfjJiFXEaw"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body-lg text-body-lg text-on-surface truncate">Midnight City Echoes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Synthwave Collective</p>
+</div>
+<div class="ml-3 flex-shrink-0">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps shadow-[2px_2px_4px_#d48d59,-2px_-2px_4px_#ffc77d]">FLAC</span>
+</div>
+</div>
+<!-- Track Card 2 -->
+<div class="flex items-center p-4 rounded-[1.5rem] bg-surface-container-highest shadow-[8px_8px_16px_#c1c0be,-8px_-8px_16px_#ffffff,inset_1px_1px_2px_#ffffff,inset_-1px_-1px_2px_#c1c0be] hover:shadow-[5px_5px_10px_#c1c0be,-5px_-5px_10px_#ffffff,inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_#c1c0be] hover:scale-[0.99] transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="w-16 h-16 rounded-xl bg-surface-variant overflow-hidden mr-4 flex-shrink-0 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="dj turntables in a dark club setting with vibrant neon blue and pink lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv794YnvDIo21lBWJa6iI1lPyrqMdbgMeNR_eUpfvcmphxk6JsT3udIKufNhwttlNdT3nfIaDXhqHUtx-UPSwIMmYBabYtgXND2CqDBjo-Lvh_iqpeaq8wy03td0RgRHzHdDh-W082bE4BGhjZSH2fb04kI4VW8LTNJPXjtwGR5Enga3v4yEa3xLeqg6EH0CRTr9-xw3nx4YW5eFmM3Puh5bBLVaSRch7WEDCIxYryzQR4Uec7oLbQYQHfFd2AAZ5e-ps587i9_9c"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body-lg text-body-lg text-on-surface truncate">Deep House Sessions Vol. 1</h3>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">DJ Horizon</p>
+</div>
+<div class="ml-3 flex-shrink-0">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps shadow-[2px_2px_4px_#5cbd97,-2px_-2px_4px_#80ffd5]">WAV</span>
+</div>
+</div>
+<!-- Track Card 3 -->
+<div class="flex items-center p-4 rounded-[1.5rem] bg-surface-container-highest shadow-[8px_8px_16px_#c1c0be,-8px_-8px_16px_#ffffff,inset_1px_1px_2px_#ffffff,inset_-1px_-1px_2px_#c1c0be] hover:shadow-[5px_5px_10px_#c1c0be,-5px_-5px_10px_#ffffff,inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_#c1c0be] hover:scale-[0.99] transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="w-16 h-16 rounded-xl bg-surface-variant overflow-hidden mr-4 flex-shrink-0 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="live concert stage with bright stage lights and silhouettes of a crowd" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTqALdaUoU3PCqo-nyFrx0AnI7rJyGvxbOeY4IhVy8ZpnBiPEMMDI65xIIXZGDoigo44oeC0-EkYtz-HuRPCccpJ75JuGfdFUVVP8x4an5nGhJDdGw6Zus5Mkx7CaRHGhu58JOBEzz3Y039GzkiEhQfxjjWxFGlp5rTVlbnBrZwfwRbS3WwcOAl9VacbbdMr3SQz0PKEwuoZAMpBpMzARz4pvzwfgr-5wdXTJ_AEHDWXkfNMUUNzB9Yawtjeubqsv6G_hePilmp1w"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body-lg text-body-lg text-on-surface truncate">Live at Red Rocks</h3>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">The River Band</p>
+</div>
+<div class="ml-3 flex-shrink-0">
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps shadow-[2px_2px_4px_#a388d4,-2px_-2px_4px_#e5beff]">MP3</span>
+</div>
+</div>
+<!-- Track Card 4 -->
+<div class="flex items-center p-4 rounded-[1.5rem] bg-surface-container-highest shadow-[8px_8px_16px_#c1c0be,-8px_-8px_16px_#ffffff,inset_1px_1px_2px_#ffffff,inset_-1px_-1px_2px_#c1c0be] hover:shadow-[5px_5px_10px_#c1c0be,-5px_-5px_10px_#ffffff,inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_#c1c0be] hover:scale-[0.99] transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="w-16 h-16 rounded-xl bg-surface-variant overflow-hidden mr-4 flex-shrink-0 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]">
+<img alt="Album Art" class="w-full h-full object-cover" data-alt="close up of a vinyl record playing on a vintage turntable with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXH4SmNZSUP2JaFCTED47bmAF-4ou5HGN7dlqTT21VKicgDG_8n4H1QDyIJKWeEEzGsONTsxreegtm8bEoC35FD67Q6EqDUs-N55wmCUZpFc4MsfxBRG51AWJ4GZh8lkT65-B1LM9KPR6LHWD6XKzOYL8aYKbKR-OI_I6MPNgEyE0Yn_HCKAE5fIOwWHH_Q0Bu585LG0bygKKR5mrVFTFlPzcv3L7zHN-9FkoKuJtJmMX_29OL5stqUltjcH0ri3fRIJYwhprxwYo"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body-lg text-body-lg text-on-surface truncate">Jazz Anthology</h3>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Miles &amp; Friends</p>
+</div>
+<div class="ml-3 flex-shrink-0">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps shadow-[2px_2px_4px_#d48d59,-2px_-2px_4px_#ffc77d]">FLAC</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] rounded-full z-50 flex justify-around items-center px-4 bg-white/90 backdrop-blur-lg shadow-2xl shadow-orange-300/40 py-2 tonal-shift shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),0_15px_30px_rgba(0,0,0,0.08)]">
+<!-- Active: Library -->
+<a class="flex flex-col items-center justify-center bg-orange-100 text-orange-600 rounded-full px-6 py-2 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.9)] scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled">library_music</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-orange-500 transition-colors" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Player</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-orange-500 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Gear</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-orange-500 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
